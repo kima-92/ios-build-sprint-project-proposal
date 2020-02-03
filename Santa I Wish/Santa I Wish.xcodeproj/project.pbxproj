@@ -14,6 +14,10 @@
 		FA6FBDBD23E8907700A1AE05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDBB23E8907700A1AE05 /* LaunchScreen.storyboard */; };
 		FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */; };
 		FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */; };
+		FA6FBDCE23E8978D00A1AE05 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCD23E8978D00A1AE05 /* Child.swift */; };
+		FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCF23E89AC300A1AE05 /* Parent.swift */; };
+		FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD123E89B4800A1AE05 /* Family.swift */; };
+		FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD323E89CD500A1AE05 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		FA6FBDBE23E8907700A1AE05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		FA6FBDCD23E8978D00A1AE05 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		FA6FBDCF23E89AC300A1AE05 /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
+		FA6FBDD123E89B4800A1AE05 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		FA6FBDD323E89CD500A1AE05 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,10 @@
 		FA6FBDC523E892D700A1AE05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA6FBDCD23E8978D00A1AE05 /* Child.swift */,
+				FA6FBDCF23E89AC300A1AE05 /* Parent.swift */,
+				FA6FBDD123E89B4800A1AE05 /* Family.swift */,
+				FA6FBDD323E89CD500A1AE05 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,7 +196,11 @@
 				FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */,
 				FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */,
 				FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */,
+				FA6FBDCE23E8978D00A1AE05 /* Child.swift in Sources */,
+				FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */,
+				FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
+				FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
