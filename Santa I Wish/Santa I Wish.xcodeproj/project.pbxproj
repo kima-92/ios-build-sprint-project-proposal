@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,10 @@
 		FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD123E89B4800A1AE05 /* Family.swift */; };
 		FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD323E89CD500A1AE05 /* Item.swift */; };
 		FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */; };
+		FA6FBDD823E8B94900A1AE05 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD723E8B94900A1AE05 /* Bearer.swift */; };
+		FA6FBDDA23E8BC8E00A1AE05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */; };
+		FA6FBDDC23E8C0C800A1AE05 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDDB23E8C0C800A1AE05 /* TestingViewController.swift */; };
+		FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		FA6FBDD123E89B4800A1AE05 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		FA6FBDD323E89CD500A1AE05 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		FA6FBDD723E8B94900A1AE05 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA6FBDDB23E8C0C800A1AE05 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
+		FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +68,6 @@
 				50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */,
 				F2DAE351DCC026C4DC586D74 /* Pods-Santa I Wish.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -102,6 +109,7 @@
 				FA6FBDB223E8907300A1AE05 /* SceneDelegate.swift */,
 				FA6FBDB923E8907700A1AE05 /* Assets.xcassets */,
 				FA6FBDBE23E8907700A1AE05 /* Info.plist */,
+				FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */,
 			);
 			path = "Santa I Wish";
 			sourceTree = "<group>";
@@ -122,6 +130,7 @@
 				FA6FBDCF23E89AC300A1AE05 /* Parent.swift */,
 				FA6FBDD123E89B4800A1AE05 /* Family.swift */,
 				FA6FBDD323E89CD500A1AE05 /* Item.swift */,
+				FA6FBDD723E8B94900A1AE05 /* Bearer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +140,7 @@
 			children = (
 				FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */,
 				FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */,
+				FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 		FA6FBDC823E892EE00A1AE05 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA6FBDDB23E8C0C800A1AE05 /* TestingViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6FBDBD23E8907700A1AE05 /* LaunchScreen.storyboard in Resources */,
+				FA6FBDDA23E8BC8E00A1AE05 /* GoogleService-Info.plist in Resources */,
 				FA6FBDBA23E8907700A1AE05 /* Assets.xcassets in Resources */,
 				FA6FBDB823E8907300A1AE05 /* Main.storyboard in Resources */,
 			);
@@ -265,12 +277,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6FBDD823E8B94900A1AE05 /* Bearer.swift in Sources */,
 				FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */,
 				FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */,
 				FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */,
 				FA6FBDCE23E8978D00A1AE05 /* Child.swift in Sources */,
 				FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */,
 				FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */,
+				FA6FBDDC23E8C0C800A1AE05 /* TestingViewController.swift in Sources */,
+				FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
 				FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */,
 				FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */,

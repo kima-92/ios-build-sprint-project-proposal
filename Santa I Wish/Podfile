@@ -6,6 +6,7 @@ target 'Santa I Wish' do
   use_frameworks!
 
   # Pods for Santa I Wish
+  pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   
 
