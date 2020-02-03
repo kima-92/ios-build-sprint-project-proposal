@@ -158,11 +158,8 @@
 		FA6FBDC823E892EE00A1AE05 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				FA6FBDDB23E8C0C800A1AE05 /* TestingViewController.swift */,
-=======
 				DD5532A923E8C887003C4451 /* LoginViewController.swift */,
->>>>>>> d7ed08da7cb7bd87e606e3f492413433cd8a17ff
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
