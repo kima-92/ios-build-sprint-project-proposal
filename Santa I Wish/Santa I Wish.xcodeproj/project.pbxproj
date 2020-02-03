@@ -12,6 +12,8 @@
 		FA6FBDB823E8907300A1AE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDB623E8907300A1AE05 /* Main.storyboard */; };
 		FA6FBDBA23E8907700A1AE05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDB923E8907700A1AE05 /* Assets.xcassets */; };
 		FA6FBDBD23E8907700A1AE05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDBB23E8907700A1AE05 /* LaunchScreen.storyboard */; };
+		FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */; };
+		FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		FA6FBDB923E8907700A1AE05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA6FBDBC23E8907700A1AE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA6FBDBE23E8907700A1AE05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 		FA6FBDC623E892DE00A1AE05 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */,
+				FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -175,7 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */,
 				FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */,
+				FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
