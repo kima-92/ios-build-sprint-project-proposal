@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17E4E3C32B7006EE77387A00 /* Pods_Santa_I_Wish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */; };
 		FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDB023E8907300A1AE05 /* AppDelegate.swift */; };
 		FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDB223E8907300A1AE05 /* SceneDelegate.swift */; };
 		FA6FBDB823E8907300A1AE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDB623E8907300A1AE05 /* Main.storyboard */; };
@@ -18,9 +19,13 @@
 		FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCF23E89AC300A1AE05 /* Parent.swift */; };
 		FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD123E89B4800A1AE05 /* Family.swift */; };
 		FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD323E89CD500A1AE05 /* Item.swift */; };
+		FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Santa_I_Wish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.debug.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.debug.xcconfig"; sourceTree = "<group>"; };
+		F2DAE351DCC026C4DC586D74 /* Pods-Santa I Wish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.release.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.release.xcconfig"; sourceTree = "<group>"; };
 		FA6FBDAD23E8907300A1AE05 /* Santa I Wish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Santa I Wish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6FBDB023E8907300A1AE05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6FBDB223E8907300A1AE05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +39,7 @@
 		FA6FBDCF23E89AC300A1AE05 /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
 		FA6FBDD123E89B4800A1AE05 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		FA6FBDD323E89CD500A1AE05 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E4E3C32B7006EE77387A00 /* Pods_Santa_I_Wish.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B09F923806ADA87090EF9B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */,
+				F2DAE351DCC026C4DC586D74 /* Pods-Santa I Wish.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A9963FA01DECAC454FA69871 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA6FBDA423E8907300A1AE05 = {
 			isa = PBXGroup;
 			children = (
 				FA6FBDAF23E8907300A1AE05 /* Santa I Wish */,
 				FA6FBDAE23E8907300A1AE05 /* Products */,
+				1B09F923806ADA87090EF9B1 /* Pods */,
+				A9963FA01DECAC454FA69871 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +138,7 @@
 		FA6FBDC723E892E500A1AE05 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -129,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA6FBDC123E8907700A1AE05 /* Build configuration list for PBXNativeTarget "Santa I Wish" */;
 			buildPhases = (
+				DEADE7819D6ED45578CC8AA5 /* [CP] Check Pods Manifest.lock */,
 				FA6FBDA923E8907300A1AE05 /* Sources */,
 				FA6FBDAA23E8907300A1AE05 /* Frameworks */,
 				FA6FBDAB23E8907300A1AE05 /* Resources */,
+				D59CE604B9089F46CFCE5FE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +218,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D59CE604B9089F46CFCE5FE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEADE7819D6ED45578CC8AA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Santa I Wish-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA6FBDA923E8907300A1AE05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -201,6 +273,7 @@
 				FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
 				FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */,
+				FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +415,7 @@
 		};
 		FA6FBDC223E8907700A1AE05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -360,6 +434,7 @@
 		};
 		FA6FBDC323E8907700A1AE05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2DAE351DCC026C4DC586D74 /* Pods-Santa I Wish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
