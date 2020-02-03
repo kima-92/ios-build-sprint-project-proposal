@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17E4E3C32B7006EE77387A00 /* Pods_Santa_I_Wish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */; };
+		DD5532AA23E8C887003C4451 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5532A923E8C887003C4451 /* LoginViewController.swift */; };
 		FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDB023E8907300A1AE05 /* AppDelegate.swift */; };
 		FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDB223E8907300A1AE05 /* SceneDelegate.swift */; };
 		FA6FBDB823E8907300A1AE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDB623E8907300A1AE05 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Santa_I_Wish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.debug.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.debug.xcconfig"; sourceTree = "<group>"; };
+		DD5532A923E8C887003C4451 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "../../../../../Objective-C/ios-sprint-challenge-pokedex-objc/Pokedex/Pokedex/Model/LoginViewController.swift"; sourceTree = "<group>"; };
 		F2DAE351DCC026C4DC586D74 /* Pods-Santa I Wish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.release.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.release.xcconfig"; sourceTree = "<group>"; };
 		FA6FBDAD23E8907300A1AE05 /* Santa I Wish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Santa I Wish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6FBDB023E8907300A1AE05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,7 +158,11 @@
 		FA6FBDC823E892EE00A1AE05 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				FA6FBDDB23E8C0C800A1AE05 /* TestingViewController.swift */,
+=======
+				DD5532A923E8C887003C4451 /* LoginViewController.swift */,
+>>>>>>> d7ed08da7cb7bd87e606e3f492413433cd8a17ff
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 				FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
 				FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */,
+				DD5532AA23E8C887003C4451 /* LoginViewController.swift in Sources */,
 				FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
