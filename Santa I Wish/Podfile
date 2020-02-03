@@ -8,6 +8,7 @@ target 'Santa I Wish' do
   # Pods for Santa I Wish
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   
 
 end
