@@ -27,6 +27,7 @@
 		FA6FBDE023E8F31E00A1AE05 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDDF23E8F31E00A1AE05 /* SignupViewController.swift */; };
 		FA6FBDE223E9042F00A1AE05 /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDE123E9042F00A1AE05 /* AddChildViewController.swift */; };
 		FA6FBDE423E904C100A1AE05 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDE323E904C100A1AE05 /* Keys.swift */; };
+		FA6FBDE723E9330D00A1AE05 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDE623E9330D00A1AE05 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		FA6FBDDF23E8F31E00A1AE05 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		FA6FBDE123E9042F00A1AE05 /* AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildViewController.swift; sourceTree = "<group>"; };
 		FA6FBDE323E904C100A1AE05 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		FA6FBDE623E9330D00A1AE05 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */,
 				FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */,
 				FA6FBDE323E904C100A1AE05 /* Keys.swift */,
+				FA6FBDE623E9330D00A1AE05 /* CoreDataStack.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				FA6FBDE423E904C100A1AE05 /* Keys.swift in Sources */,
 				FA6FBDCE23E8978D00A1AE05 /* Child.swift in Sources */,
 				FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */,
+				FA6FBDE723E9330D00A1AE05 /* CoreDataStack.swift in Sources */,
 				FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */,
 				FA6FBDE023E8F31E00A1AE05 /* SignupViewController.swift in Sources */,
 				FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */,
