@@ -105,7 +105,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="SEK-9M-cfc" id="AwK-75-Vtg"/>
                         <outlet property="passwordTextField" destination="pSr-JN-zYd" id="HcA-rZ-nQD"/>
-                        <segue destination="swj-rg-Hk2" kind="show" identifier="ChildAccountSegue" id="iiq-id-CMk"/>
+                        <segue destination="swj-rg-Hk2" kind="show" identifier="SegueFromLogin" id="iiq-id-CMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KED-b7-NKK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -174,7 +174,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="379" height="219"/>
                                         <connections>
-                                            <segue destination="FuB-R8-e9F" kind="show" id="BjP-3B-mzX"/>
+                                            <segue destination="eOH-7D-DiX" kind="show" identifier="ChildHomePageSegue" id="TqU-Fh-rvK"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -196,13 +196,405 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XlT-26-rY9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rvn-Dl-ogx"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rvn-Dl-ogx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7FW-E5-ws3">
+                            <connections>
+                                <segue destination="3ht-Td-BBY" kind="show" identifier="AddNewChildSegue" id="slO-HA-0LR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOw-JC-Usg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815.94202898550736" y="829.6875"/>
+            <point key="canvasLocation" x="810" y="830"/>
         </scene>
-        <!--Table View Controller-->
+        <!--View Controller-->
+        <scene sceneID="qMn-qy-dyk">
+            <objects>
+                <viewController id="zfA-cS-YSx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GuZ-KR-Avh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Child's Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-aT-vtC">
+                                <rect key="frame" x="141" y="114" width="120" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWy-G4-FLk">
+                                <rect key="frame" x="115" y="271" width="137" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Letters to Santa"/>
+                                <connections>
+                                    <segue destination="Wyz-SX-IUR" kind="show" identifier="ShowParentTheLetterToSanta" id="Wly-AC-rDF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9l1-Hh-IUA">
+                                <rect key="frame" x="144" y="340" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Wish List"/>
+                                <connections>
+                                    <segue destination="vKV-XW-yQN" kind="show" identifier="ShowParentTheWishListSegue" id="0zo-3e-NLb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wqZ-g0-tUR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qse-1R-AKB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBV-y3-hXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1052" y="1566"/>
+        </scene>
+        <!--Child's Wish List-->
+        <scene sceneID="UHS-FF-Zb7">
+            <objects>
+                <tableViewController id="vKV-XW-yQN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8of-Cg-8pF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wuw-CK-YOE">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wuw-CK-YOE" id="JrU-s0-bxj">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="lUL-Rj-ipF" kind="show" identifier="ShowParentToyDetailSegue" id="QOm-qT-otx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vKV-XW-yQN" id="QAv-gK-9V0"/>
+                            <outlet property="delegate" destination="vKV-XW-yQN" id="8Fa-HV-vP5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Child's Wish List" id="cG3-y0-ol2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vT8-SS-6bx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1052" y="2348"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="b2y-cm-9yU">
+            <objects>
+                <viewController id="lUL-Rj-ipF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SsP-ZE-rDd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OmE-Oo-mbP">
+                                <rect key="frame" x="30" y="118" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="7zF-Dt-dLo"/>
+                                    <constraint firstAttribute="width" secondItem="OmE-Oo-mbP" secondAttribute="height" multiplier="1:1" id="oua-tH-y52"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wLM-mv-rfl">
+                                <rect key="frame" x="30" y="338" width="354" height="439"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toy Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSR-IZ-nTX">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AaN-dV-TNM">
+                                        <rect key="frame" x="0.0" y="50" width="354" height="118"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U1A-EE-bhr">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZY-TW-23g">
+                                                        <rect key="frame" x="0.0" y="0.0" width="54.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rz3-zP-FSO">
+                                                        <rect key="frame" x="64.5" y="0.0" width="289.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Eo7-FF-Adq">
+                                                <rect key="frame" x="0.0" y="44" width="354" height="74"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where do you want to buy it from?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9A-qE-a5n">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jBZ-RC-SRr">
+                                                        <rect key="frame" x="0.0" y="40" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M9e-zB-gnJ">
+                                        <rect key="frame" x="0.0" y="188" width="354" height="195"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Child's Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4So-ek-dc9">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L97-aZ-p5m">
+                                                <rect key="frame" x="0.0" y="45" width="354" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="cBD-KA-sSq"/>
+                                                </constraints>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIW-BL-vnc">
+                                        <rect key="frame" x="0.0" y="403" width="354" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Mark as Bought"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OmE-Oo-mbP" firstAttribute="leading" secondItem="b7O-fP-B9K" secondAttribute="leading" constant="30" id="7Sa-te-T1c"/>
+                            <constraint firstItem="wLM-mv-rfl" firstAttribute="top" secondItem="OmE-Oo-mbP" secondAttribute="bottom" constant="100" id="DM2-Cg-2RK"/>
+                            <constraint firstItem="b7O-fP-B9K" firstAttribute="trailing" secondItem="wLM-mv-rfl" secondAttribute="trailing" constant="30" id="RVO-nT-mGM"/>
+                            <constraint firstItem="wLM-mv-rfl" firstAttribute="leading" secondItem="SsP-ZE-rDd" secondAttribute="leading" constant="30" id="caN-Az-aOA"/>
+                            <constraint firstItem="OmE-Oo-mbP" firstAttribute="top" secondItem="b7O-fP-B9K" secondAttribute="top" constant="30" id="xnj-n9-CEd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b7O-fP-B9K"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W2I-iA-ebA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jC0-dT-WcY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1968.1159420289857" y="2337.7232142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JKz-6M-bsw">
+            <objects>
+                <viewController id="ot0-4Y-wJI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C6T-f1-G0g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ABi-ex-xII">
+                                <rect key="frame" x="100.5" y="406" width="213" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Parental Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hy-rr-c2B">
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIx-nF-sR0">
+                                        <rect key="frame" x="0.0" y="50" width="213" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k7-Os-q8A">
+                                <rect key="frame" x="167" y="540" width="80" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Continue"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ABi-ex-xII" firstAttribute="centerY" secondItem="C6T-f1-G0g" secondAttribute="centerY" id="NXq-ev-v5t"/>
+                            <constraint firstItem="ABi-ex-xII" firstAttribute="centerX" secondItem="C6T-f1-G0g" secondAttribute="centerX" id="T3l-fQ-KnW"/>
+                            <constraint firstItem="4k7-Os-q8A" firstAttribute="centerX" secondItem="C6T-f1-G0g" secondAttribute="centerX" id="ert-qh-PMr"/>
+                            <constraint firstItem="4k7-Os-q8A" firstAttribute="top" secondItem="ABi-ex-xII" secondAttribute="bottom" constant="50" id="qvi-q0-dPS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DBN-Wx-rki"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ipH-0e-V5H"/>
+                    <connections>
+                        <segue destination="zfA-cS-YSx" kind="show" identifier="SeeChildProfile" id="ruY-lL-Tks"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="677-rT-lkf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="1566"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WxZ-iG-6R0">
+            <objects>
+                <viewController id="eOH-7D-DiX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sm8-4R-7Lr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Rgd-2v-Qca">
+                                <rect key="frame" x="23" y="230" width="368" height="300"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sLe-XX-5t3">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="104"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Toy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRi-J2-7ZH">
+                                                <rect key="frame" x="0.0" y="0.0" width="368" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IBP-fF-Ge2">
+                                                <rect key="frame" x="0.0" y="56" width="368" height="48"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8w-ym-q4L">
+                                                        <rect key="frame" x="0.0" y="0.0" width="169" height="48"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="With Camera"/>
+                                                        <connections>
+                                                            <segue destination="Dle-Wz-gcn" kind="show" identifier="ShowCameraSegue" id="57f-gc-bI4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d76-XT-lJY">
+                                                        <rect key="frame" x="199" y="0.0" width="169" height="48"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="Add Toy"/>
+                                                        <connections>
+                                                            <segue destination="i8h-Sh-eQf" kind="show" identifier="AddNewToySegue" id="NHj-Jc-hcG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe0-6T-wit">
+                                        <rect key="frame" x="0.0" y="154" width="368" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Write Letter to Santa"/>
+                                        <connections>
+                                            <segue destination="Wyz-SX-IUR" kind="show" identifier="ShowLetterToSantaSegue" id="bFy-va-yqw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miq-h1-wpR">
+                                        <rect key="frame" x="0.0" y="252" width="368" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Wish List"/>
+                                        <connections>
+                                            <segue destination="FuB-R8-e9F" kind="show" identifier="ShowWishListSegue" id="Qok-kg-VWp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qfa-oK-xil"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="En1-ff-dMg">
+                        <barButtonItem key="rightBarButtonItem" title="Parent Settings" id="dur-mQ-WfU">
+                            <connections>
+                                <segue destination="ot0-4Y-wJI" kind="show" identifier="EnterParentCodeSegue" id="Q7c-XD-kAq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4do-7X-qsd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="1566"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PUE-7J-keB">
+            <objects>
+                <viewController id="i8h-Sh-eQf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KO4-vf-tmE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="b7h-wo-yNX">
+                                <rect key="frame" x="40" y="128" width="334" height="692"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fu2-Oj-VTn">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="334"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fu2-Oj-VTn" secondAttribute="height" multiplier="1:1" id="WSh-w2-2e5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Toy Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjk-nU-aF1">
+                                        <rect key="frame" x="0.0" y="364" width="334" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uca-QJ-2mr">
+                                        <rect key="frame" x="0.0" y="432" width="334" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F7l-pt-D1r">
+                                        <rect key="frame" x="0.0" y="492" width="334" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="0fK-2a-boU"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bSb-Gd-tg4" firstAttribute="trailing" secondItem="b7h-wo-yNX" secondAttribute="trailing" constant="40" id="ngw-7h-Abl"/>
+                            <constraint firstItem="b7h-wo-yNX" firstAttribute="top" secondItem="bSb-Gd-tg4" secondAttribute="top" constant="40" id="t5Z-zL-qla"/>
+                            <constraint firstItem="b7h-wo-yNX" firstAttribute="leading" secondItem="bSb-Gd-tg4" secondAttribute="leading" constant="40" id="yhQ-Hy-NDi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bSb-Gd-tg4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1af-gF-urb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FMX-dm-Uhu"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Na8-MC-0Sc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1899" y="1592"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7dT-W1-IkZ">
+            <objects>
+                <viewController id="Dle-Wz-gcn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ua2-Su-GoF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fyj-kY-bU9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rn9-z3-pcH"/>
+                    <connections>
+                        <segue destination="i8h-Sh-eQf" kind="show" identifier="AddToyWithPictureSegue" id="6te-lk-557"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="div-1w-8vE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2854" y="830"/>
+        </scene>
+        <!--Wish List-->
         <scene sceneID="VrP-hO-xtn">
             <objects>
                 <tableViewController id="FuB-R8-e9F" sceneMemberID="viewController">
@@ -218,6 +610,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="i8h-Sh-eQf" kind="show" identifier="ShowToyDetailSegue" id="RcG-WW-63C"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -225,11 +620,74 @@
                             <outlet property="delegate" destination="FuB-R8-e9F" id="vUO-C3-S5c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sXK-lO-sd4"/>
+                    <navigationItem key="navigationItem" title="Wish List" id="sXK-lO-sd4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOP-8O-keS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="830"/>
+            <point key="canvasLocation" x="1899" y="2338"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rRQ-nP-GcV">
+            <objects>
+                <viewController id="Wyz-SX-IUR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aeW-d4-dCu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-ob-jpK">
+                                <rect key="frame" x="30" y="118" width="354" height="576"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-TH-zEq">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
+                                        <string key="text">Write your Letter to Santa Claus 
+We will send it to the North Pole!</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pwe-rN-d6L">
+                                        <rect key="frame" x="0.0" y="88" width="354" height="400"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dear Santa," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGk-Tt-lZo">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j30-0u-6rY">
+                                                <rect key="frame" x="0.0" y="25.5" width="354" height="374.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="UJq-Nb-dmf"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2W-bK-mxI">
+                                        <rect key="frame" x="0.0" y="528" width="354" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Send to Santa!"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="l8b-ob-jpK" firstAttribute="leading" secondItem="hG2-6h-C2m" secondAttribute="leading" constant="30" id="Dj3-Wi-Ef5"/>
+                            <constraint firstItem="l8b-ob-jpK" firstAttribute="top" secondItem="hG2-6h-C2m" secondAttribute="top" constant="30" id="R1Q-gf-51e"/>
+                            <constraint firstItem="hG2-6h-C2m" firstAttribute="trailing" secondItem="l8b-ob-jpK" secondAttribute="trailing" constant="30" id="q5F-wG-fEk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hG2-6h-C2m"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vnT-nf-YbZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jD-9A-2Yc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="2338"/>
         </scene>
         <!--Signup-->
         <scene sceneID="r1g-Wq-Qjq">
@@ -330,12 +788,12 @@
                         <outlet property="emailTextField" destination="T2F-Ih-2TN" id="ajL-tb-2lA"/>
                         <outlet property="nameTextField" destination="CyT-VV-WgW" id="WYb-T9-I0r"/>
                         <outlet property="passwordTextField" destination="uIb-HW-lR8" id="9Rs-XJ-mC1"/>
-                        <segue destination="3ht-Td-BBY" kind="show" identifier="AddNewChildSegue" id="CxY-Es-dve"/>
+                        <segue destination="swj-rg-Hk2" kind="show" identifier="SegueFromSignup" id="PwE-0H-BsP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpB-bJ-ios" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550.7246376811595" y="107.8125"/>
+            <point key="canvasLocation" x="1899" y="108"/>
         </scene>
         <!--Add Child View Controller-->
         <scene sceneID="U4U-uJ-tCD">
@@ -419,7 +877,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tQ-cG-EZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2339" y="108"/>
+            <point key="canvasLocation" x="1899" y="830"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7C7-Vp-Pjc">
@@ -446,4 +904,9 @@
         <image name="Rectangle -1" width="201" height="55.5"/>
         <image name="Rectangle -3" width="133" height="55.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wly-AC-rDF"/>
+        <segue reference="RcG-WW-63C"/>
+        <segue reference="PwE-0H-BsP"/>
+    </inferredMetricsTieBreakers>
 </document>

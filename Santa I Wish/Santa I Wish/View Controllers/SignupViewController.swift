@@ -58,7 +58,7 @@ class SignupViewController: UIViewController {
                         }
                     }
                     // TODO: Transition to next VC
-                    self.performSegue(withIdentifier: .addNewChildSegue, sender: self)
+                    self.performSegue(withIdentifier: .segueFromSignup, sender: self)
                 }
             }
         }

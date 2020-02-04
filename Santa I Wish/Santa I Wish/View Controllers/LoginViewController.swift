@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                     NSLog("Error trying to login: \(err)")
                 } else {
                     // TODO: Use the result coming back from the response
-                    self.performSegue(withIdentifier: .childAccountSegue, sender: self)
+                    self.performSegue(withIdentifier: .segueFromLogin, sender: self)
                 }
             }
 
@@ -90,7 +90,7 @@ class LoginViewController: UIViewController {
     
     func updateViews() {
         passwordTextField.isSecureTextEntry = true
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         self.hideKeyboardWhenTappedAround()
     }
     
