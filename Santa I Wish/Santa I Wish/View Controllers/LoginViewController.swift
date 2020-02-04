@@ -44,6 +44,7 @@ class LoginViewController: UIViewController {
                     self.showErrorAlert(errorMessage: "Unsuccessful Login: \(err.localizedDescription)")
                     NSLog("Error trying to login: \(err)")
                 } else {
+                    // TODO: Use the result coming back from the response
                     self.performSegue(withIdentifier: .childAccountSegue, sender: self)
                 }
             }

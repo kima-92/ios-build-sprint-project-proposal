@@ -20,4 +20,3 @@ struct Letter {
     var note: String
     var date: Date
 }
-

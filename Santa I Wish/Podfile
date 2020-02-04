@@ -10,5 +10,7 @@ target 'Santa I Wish' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   
+  pod 'SwiftLint'
+  
 
 end
