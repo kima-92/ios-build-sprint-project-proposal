@@ -40,7 +40,8 @@ class SignupViewController: UIViewController {
             
             // Clean version of data entry
             guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-                let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+            let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
             // Creating new Account
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
@@ -50,7 +51,7 @@ class SignupViewController: UIViewController {
                     NSLog("Error creating family account to PUT in Firebase: \(err)")
                 } else {
                     let db = Firestore.firestore()
-                    db.collection("ParentAccount").addDocument(data: ["id":result!.user.uid]) { (error) in
+                    db.collection("ParentAccount").addDocument(data: ["name": name, "id":result!.user.uid]) { (error) in
                         
                         if let error = error {
                             //family was created but couldn't save the response we get back

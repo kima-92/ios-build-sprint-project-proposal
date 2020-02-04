@@ -7,16 +7,86 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        updateViews()
     }
     
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    }
+    
+    func login() {
+        
+        // Validate the fields, or save error mesage to display
+        let error = validateFields()
+        
+        if error != nil {
+            showErrorAlert(errorMessage: error!)
+        } else {
+            
+            // Clean version of data entry
+            guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+                let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+            
+//            Auth.auth().signIn(withEmail: email, link: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
 
+        }
+        
+        
+    }
+    
+    func showErrorAlert(errorMessage: String) {
+        let alert = UIAlertController(title: "Oops!", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func validateFields() -> String? {
+        
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Check that all fields are filled in
+        if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Please fill in all fields."
+        }
+        
+        // TODO: Comment back in for production
+        
+        //        // Check if the password is secure enough
+        //        if isPasswordValid(cleanedPassword) == false {
+        //
+        //            return "Please make sure your password is at least 8 characters, contains a special character and a number."
+        //        }
+        return nil
+    }
+    
+    func isPasswordValid(_ password: String) -> Bool {
+        // 1 - Password length is 8.
+        // 2 - One Alphabet in Password.
+        // 3 - One Special Character in Password.
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
+    }
+    
+    func updateViews() {
+        passwordTextField.isSecureTextEntry = true
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.hideKeyboardWhenTappedAround()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +96,4 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
