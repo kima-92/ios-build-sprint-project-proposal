@@ -4,7 +4,6 @@
 //
 //  Created by brian vilchez on 2/3/20.
 //  Copyright © 2020 Lambda School. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -23,6 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        login()
     }
     
     func login() {
@@ -38,11 +38,17 @@ class LoginViewController: UIViewController {
             guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
                 let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
-//            Auth.auth().signIn(withEmail: email, link: <#T##String#>, completion: <#T##AuthDataResultCallback?##AuthDataResultCallback?##(AuthDataResult?, Error?) -> Void#>)
+            Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+                
+                if let err = err {
+                    self.showErrorAlert(errorMessage: "Unsuccessful Login: \(err.localizedDescription)")
+                    NSLog("Error trying to login: \(err)")
+                } else {
+                    self.performSegue(withIdentifier: .childAccountSegue, sender: self)
+                }
+            }
 
         }
-        
-        
     }
     
     func showErrorAlert(errorMessage: String) {

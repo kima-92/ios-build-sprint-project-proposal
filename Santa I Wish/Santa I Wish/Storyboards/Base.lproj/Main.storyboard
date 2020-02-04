@@ -49,7 +49,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="zaK-D9-sm4" eventType="touchUpInside" id="CgI-t4-dFI"/>
-                                    <segue destination="swj-rg-Hk2" kind="show" id="W3Q-JY-A55"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lda-gm-lSB">
@@ -106,6 +105,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="SEK-9M-cfc" id="AwK-75-Vtg"/>
                         <outlet property="passwordTextField" destination="pSr-JN-zYd" id="HcA-rZ-nQD"/>
+                        <segue destination="swj-rg-Hk2" kind="show" identifier="ChildAccountSegue" id="iiq-id-CMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KED-b7-NKK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -179,8 +179,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wishlists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHT-nb-XW4">
-                                <rect key="frame" x="8" y="159" width="164" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHT-nb-XW4">
+                                <rect key="frame" x="8" y="159" width="170" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

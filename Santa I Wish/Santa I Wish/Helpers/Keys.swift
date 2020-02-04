@@ -15,4 +15,5 @@ extension String {
     
     // Segues
     static var addNewChildSegue = "AddNewChildSegue"
+    static var childAccountSegue = "ChildAccountSegue"
 }
