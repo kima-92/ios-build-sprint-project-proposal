@@ -21,8 +21,7 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        self.hideKeyboardWhenTappedAround()
+        updateViews()
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -101,6 +100,12 @@ class SignupViewController: UIViewController {
         // 3 - One Special Character in Password.
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
+    }
+    
+    func updateViews() {
+        passwordTextField.isSecureTextEntry = true
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.hideKeyboardWhenTappedAround()
     }
     
     /*
