@@ -16,10 +16,6 @@
 		FA6FBDBD23E8907700A1AE05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDBB23E8907700A1AE05 /* LaunchScreen.storyboard */; };
 		FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */; };
 		FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */; };
-		FA6FBDCE23E8978D00A1AE05 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCD23E8978D00A1AE05 /* Child.swift */; };
-		FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCF23E89AC300A1AE05 /* Parent.swift */; };
-		FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD123E89B4800A1AE05 /* Family.swift */; };
-		FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD323E89CD500A1AE05 /* Item.swift */; };
 		FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */; };
 		FA6FBDD823E8B94900A1AE05 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD723E8B94900A1AE05 /* Bearer.swift */; };
 		FA6FBDDA23E8BC8E00A1AE05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */; };
@@ -29,6 +25,12 @@
 		FA6FBDE423E904C100A1AE05 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDE323E904C100A1AE05 /* Keys.swift */; };
 		FA6FBDE723E9330D00A1AE05 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDE623E9330D00A1AE05 /* CoreDataStack.swift */; };
 		FA6FBDEA23E933C900A1AE05 /* SantaIWish.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDE823E933C900A1AE05 /* SantaIWish.xcdatamodeld */; };
+		FA6FBDEC23E9B14C00A1AE05 /* Child+Covenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDEB23E9B14C00A1AE05 /* Child+Covenience.swift */; };
+		FA6FBDEE23E9B17900A1AE05 /* Item+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDED23E9B17900A1AE05 /* Item+Convenience.swift */; };
+		FA6FBDF023E9B1E200A1AE05 /* Parent+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDEF23E9B1E200A1AE05 /* Parent+Convenience.swift */; };
+		FA6FBDF223E9B28E00A1AE05 /* ParentRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDF123E9B28E00A1AE05 /* ParentRepresentation.swift */; };
+		FA6FBDF423E9B37E00A1AE05 /* ChildRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDF323E9B37E00A1AE05 /* ChildRepresentation.swift */; };
+		FA6FBDF623E9B7B300A1AE05 /* ItemRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDF523E9B7B300A1AE05 /* ItemRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,10 +47,6 @@
 		FA6FBDBE23E8907700A1AE05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		FA6FBDCD23E8978D00A1AE05 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
-		FA6FBDCF23E89AC300A1AE05 /* Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
-		FA6FBDD123E89B4800A1AE05 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
-		FA6FBDD323E89CD500A1AE05 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		FA6FBDD723E8B94900A1AE05 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -58,6 +56,12 @@
 		FA6FBDE323E904C100A1AE05 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		FA6FBDE623E9330D00A1AE05 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FA6FBDE923E933C900A1AE05 /* SantaIWish.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SantaIWish.xcdatamodel; sourceTree = "<group>"; };
+		FA6FBDEB23E9B14C00A1AE05 /* Child+Covenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Child+Covenience.swift"; sourceTree = "<group>"; };
+		FA6FBDED23E9B17900A1AE05 /* Item+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Convenience.swift"; sourceTree = "<group>"; };
+		FA6FBDEF23E9B1E200A1AE05 /* Parent+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parent+Convenience.swift"; sourceTree = "<group>"; };
+		FA6FBDF123E9B28E00A1AE05 /* ParentRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRepresentation.swift; sourceTree = "<group>"; };
+		FA6FBDF323E9B37E00A1AE05 /* ChildRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRepresentation.swift; sourceTree = "<group>"; };
+		FA6FBDF523E9B7B300A1AE05 /* ItemRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +140,14 @@
 		FA6FBDC523E892D700A1AE05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA6FBDCD23E8978D00A1AE05 /* Child.swift */,
-				FA6FBDCF23E89AC300A1AE05 /* Parent.swift */,
-				FA6FBDD123E89B4800A1AE05 /* Family.swift */,
-				FA6FBDD323E89CD500A1AE05 /* Item.swift */,
 				FA6FBDD723E8B94900A1AE05 /* Bearer.swift */,
 				FA6FBDE823E933C900A1AE05 /* SantaIWish.xcdatamodeld */,
+				FA6FBDEB23E9B14C00A1AE05 /* Child+Covenience.swift */,
+				FA6FBDED23E9B17900A1AE05 /* Item+Convenience.swift */,
+				FA6FBDEF23E9B1E200A1AE05 /* Parent+Convenience.swift */,
+				FA6FBDF123E9B28E00A1AE05 /* ParentRepresentation.swift */,
+				FA6FBDF323E9B37E00A1AE05 /* ChildRepresentation.swift */,
+				FA6FBDF523E9B7B300A1AE05 /* ItemRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,20 +316,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6FBDF223E9B28E00A1AE05 /* ParentRepresentation.swift in Sources */,
 				FA6FBDD823E8B94900A1AE05 /* Bearer.swift in Sources */,
 				FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */,
 				FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */,
+				FA6FBDF023E9B1E200A1AE05 /* Parent+Convenience.swift in Sources */,
 				FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */,
 				FA6FBDE423E904C100A1AE05 /* Keys.swift in Sources */,
-				FA6FBDCE23E8978D00A1AE05 /* Child.swift in Sources */,
-				FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */,
 				FA6FBDE723E9330D00A1AE05 /* CoreDataStack.swift in Sources */,
-				FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */,
 				FA6FBDE023E8F31E00A1AE05 /* SignupViewController.swift in Sources */,
+				FA6FBDEE23E9B17900A1AE05 /* Item+Convenience.swift in Sources */,
+				FA6FBDEC23E9B14C00A1AE05 /* Child+Covenience.swift in Sources */,
 				FA6FBDEA23E933C900A1AE05 /* SantaIWish.xcdatamodeld in Sources */,
 				FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */,
+				FA6FBDF423E9B37E00A1AE05 /* ChildRepresentation.swift in Sources */,
+				FA6FBDF623E9B7B300A1AE05 /* ItemRepresentation.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
-				FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */,
 				FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */,
 				DD5532AC23E8D856003C4451 /* LoginViewController.swift in Sources */,
 				FA6FBDE223E9042F00A1AE05 /* AddChildViewController.swift in Sources */,
