@@ -23,8 +23,10 @@
 		FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */; };
 		FA6FBDD823E8B94900A1AE05 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD723E8B94900A1AE05 /* Bearer.swift */; };
 		FA6FBDDA23E8BC8E00A1AE05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */; };
-		FA6FBDDC23E8C0C800A1AE05 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDDB23E8C0C800A1AE05 /* TestingViewController.swift */; };
 		FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */; };
+		FA6FBDE023E8F31E00A1AE05 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDDF23E8F31E00A1AE05 /* SignupViewController.swift */; };
+		FA6FBDE223E9042F00A1AE05 /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDE123E9042F00A1AE05 /* AddChildViewController.swift */; };
+		FA6FBDE423E904C100A1AE05 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDE323E904C100A1AE05 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +50,10 @@
 		FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		FA6FBDD723E8B94900A1AE05 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FA6FBDDB23E8C0C800A1AE05 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		FA6FBDDF23E8F31E00A1AE05 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		FA6FBDE123E9042F00A1AE05 /* AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildViewController.swift; sourceTree = "<group>"; };
+		FA6FBDE323E904C100A1AE05 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 				FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */,
 				FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */,
 				FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */,
+				FA6FBDE323E904C100A1AE05 /* Keys.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -158,8 +163,9 @@
 		FA6FBDC823E892EE00A1AE05 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA6FBDDB23E8C0C800A1AE05 /* TestingViewController.swift */,
 				DD5532AB23E8D856003C4451 /* LoginViewController.swift */,
+				FA6FBDDF23E8F31E00A1AE05 /* SignupViewController.swift */,
+				FA6FBDE123E9042F00A1AE05 /* AddChildViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -284,15 +290,17 @@
 				FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */,
 				FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */,
 				FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */,
+				FA6FBDE423E904C100A1AE05 /* Keys.swift in Sources */,
 				FA6FBDCE23E8978D00A1AE05 /* Child.swift in Sources */,
 				FA6FBDD423E89CD500A1AE05 /* Item.swift in Sources */,
 				FA6FBDD223E89B4800A1AE05 /* Family.swift in Sources */,
-				FA6FBDDC23E8C0C800A1AE05 /* TestingViewController.swift in Sources */,
+				FA6FBDE023E8F31E00A1AE05 /* SignupViewController.swift in Sources */,
 				FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
 				FA6FBDD023E89AC300A1AE05 /* Parent.swift in Sources */,
 				FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */,
 				DD5532AC23E8D856003C4451 /* LoginViewController.swift in Sources */,
+				FA6FBDE223E9042F00A1AE05 /* AddChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

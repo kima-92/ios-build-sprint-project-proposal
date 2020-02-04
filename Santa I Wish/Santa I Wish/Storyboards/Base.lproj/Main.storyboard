@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lo-->
+        <!--Login View Controller-->
         <scene sceneID="wZP-Gd-7ea">
             <objects>
-                <viewController id="zaK-D9-sm4" customClass="lo" sceneMemberID="viewController">
+                <viewController id="zaK-D9-sm4" customClass="LoginViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hyG-Qu-E3l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +48,7 @@
                                     <color key="titleColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="loginButtonTapped:" destination="zaK-D9-sm4" eventType="touchUpInside" id="CgI-t4-dFI"/>
                                     <segue destination="swj-rg-Hk2" kind="show" id="W3Q-JY-A55"/>
                                 </connections>
                             </button>
@@ -58,7 +59,7 @@
                                     <color key="titleColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="53I-eR-LZS" kind="show" id="zom-Y7-anc"/>
+                                    <segue destination="53I-eR-LZS" kind="show" identifier="SignupSegue" id="zom-Y7-anc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santa I Wish!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adY-b0-OTz">
@@ -102,6 +103,10 @@
                         <viewLayoutGuide key="safeArea" id="YT9-9C-6a7"/>
                     </view>
                     <navigationItem key="navigationItem" id="3ss-nZ-J3q"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="SEK-9M-cfc" id="AwK-75-Vtg"/>
+                        <outlet property="passwordTextField" destination="pSr-JN-zYd" id="HcA-rZ-nQD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KED-b7-NKK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +234,7 @@
         <!--Signup-->
         <scene sceneID="r1g-Wq-Qjq">
             <objects>
-                <viewController title="Signup" id="53I-eR-LZS" sceneMemberID="viewController">
+                <viewController title="Signup" id="53I-eR-LZS" customClass="SignupViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5jC-Rr-MEq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,11 +284,11 @@
                                     <constraint firstAttribute="height" constant="107" id="DJ2-tP-1Em"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Next" backgroundImage="Rectangle -3">
+                                <state key="normal" title="Next  " backgroundImage="Rectangle -3">
                                     <color key="titleColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3ht-Td-BBY" kind="show" id="jSR-ST-PXg"/>
+                                    <action selector="nextButtonTapped:" destination="53I-eR-LZS" eventType="touchUpInside" id="Kyx-Es-POT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -321,15 +326,21 @@
                         <viewLayoutGuide key="safeArea" id="hs5-py-uzB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xve-gu-Iyl"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="T2F-Ih-2TN" id="ajL-tb-2lA"/>
+                        <outlet property="nameTextField" destination="CyT-VV-WgW" id="WYb-T9-I0r"/>
+                        <outlet property="passwordTextField" destination="uIb-HW-lR8" id="9Rs-XJ-mC1"/>
+                        <segue destination="3ht-Td-BBY" kind="show" identifier="AddNewChildSegue" id="CxY-Es-dve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpB-bJ-ios" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1550.7246376811595" y="107.8125"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Child View Controller-->
         <scene sceneID="U4U-uJ-tCD">
             <objects>
-                <viewController id="3ht-Td-BBY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddChildVC" id="3ht-Td-BBY" customClass="AddChildViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0w9-Db-FI4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,7 +357,7 @@
                                     <constraint firstAttribute="height" constant="107" id="WLI-RX-eQT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Done!" backgroundImage="Rectangle -3">
+                                <state key="normal" title="Done!  " backgroundImage="Rectangle -3">
                                     <color key="titleColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>

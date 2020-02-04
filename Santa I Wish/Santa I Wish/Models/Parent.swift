@@ -9,9 +9,10 @@
 import Foundation
 
 struct Parent {
+    var id: String
     var name: String
     var username: String
     var password: String
-    var children: [Child]
-    var holidayBudget: Double
+    var children: [Child]?
+    var holidayBudget: Double?
 }

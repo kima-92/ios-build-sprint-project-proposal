@@ -9,8 +9,8 @@
 import Foundation
 
 struct  Family {
-    var parent: Parent
+    var id: String
+    var parent: Parent?
     var children: [Child] // children = Parent.children
-    var username: String
     var password: String
 }
