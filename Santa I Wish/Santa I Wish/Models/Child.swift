@@ -7,16 +7,16 @@
 //
 
 import Foundation
-
-struct Child {
-    var id: String
-    var name: String
-    var photo: Data?
-    var letters: [Letter]?
-    var wishList: [Item]?
-}
-
-struct Letter {
-    var note: String
-    var date: Date
-}
+//
+//struct Child {
+//    var id: String
+//    var name: String
+//    var photo: Data?
+//    var letters: Letter?
+//    var wishList: [Item]?
+//}
+//
+//struct Letter {
+//    var note: String
+//    var date: Date
+//}

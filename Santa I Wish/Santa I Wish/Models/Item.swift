@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Item {
-    var id: String
-    var name: String
-    var image: Data?
-    var childNotes: String?
-    var price: Double?
-    var store: String?
-    var hasBeenBought: Bool?
-}
+//struct Item {
+//    var id: String
+//    var name: String
+//    var image: Data?
+//    var childNotes: String?
+//    var price: Double?
+//    var store: String?
+//    var hasBeenBought: Bool?
+//}

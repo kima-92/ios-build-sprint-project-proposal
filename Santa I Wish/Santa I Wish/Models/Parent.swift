@@ -8,11 +8,10 @@
 
 import Foundation
 
-struct Parent {
-    var id: String
-    var name: String
-    var username: String
-    var password: String
-    var children: [Child]?
-    var holidayBudget: Double?
-}
+//struct Parent {
+//    var id: String
+//    var name: String
+//    var password: String
+//    var children: [Child]?
+//    var holidayBudget: Double?
+//}
