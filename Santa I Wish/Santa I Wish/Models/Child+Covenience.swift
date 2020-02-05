@@ -11,12 +11,11 @@ import CoreData
 
 extension Child {
     
-    convenience init(name: String, age: String, letters: NSSet , parent: Parent, items: NSSet,context: NSManagedObjectContext) {
+    convenience init(name: String, age: String, letters: NSSet = [], items: NSSet = [], context: NSManagedObjectContext) {
         self.init(context:context)
         self.name = name
         self.age = age
         self.letters = letters
-        self.parent = parent
         self.items = items
     }
 }

@@ -11,15 +11,20 @@ import CoreData
 
 class SantaIWishController {
     
-    
-    func addChild(withName name: String, age: Int , context: NSManagedObjectContext) {
+    func addChild(withName name: String, age: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) -> Child {
         
-        let child = Child()
+        let child = Child(name: name, age: String(age), context: context)
+        CoreDataStack.shared.saveToPersistentStore()
+        return child
     }
     
-    func createLetter(withLetter: String,context: NSManagedObjectContext) {}
+    func createLetter(withLetter: String, context: NSManagedObjectContext) {}
     
-    func addItemToWishList(itemName name: String, note: String ,context: NSManagedObjectContext ) {}
+    func addItemToWishList(itemName name: String, note: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext ) {}
     
-    func createParentProfile(withName name:String, email:String, context: NSManagedObjectContext) {}
+    func createParentProfile(with name:String, email:String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        let parent = Parent(name: name, email: email, context: context)
+        CoreDataStack.shared.saveToPersistentStore()
+        print(parent)
+    }
 }

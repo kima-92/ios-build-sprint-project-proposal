@@ -61,7 +61,7 @@
                                     <color key="titleColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="53I-eR-LZS" kind="show" id="bPq-qc-r8k"/>
+                                    <segue destination="53I-eR-LZS" kind="show" identifier="SignUpSegue" id="bPq-qc-r8k"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santa I Wish!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adY-b0-OTz">
@@ -877,6 +877,6 @@
         <image name="dribbble" width="800" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iiq-id-CMk"/>
+        <segue reference="PwE-0H-BsP"/>
     </inferredMetricsTieBreakers>
 </document>

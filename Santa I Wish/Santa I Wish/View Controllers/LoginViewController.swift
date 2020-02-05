@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     
+    // MARK: - Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var santaIWishController = SantaIWishController()
@@ -26,7 +27,7 @@ class LoginViewController: UIViewController {
         login()
     }
     
-    //MARK: - Helper methods
+    // MARK: - Helper methods
     func login() {
         
         // Validate the fields, or save error mesage to display
@@ -97,12 +98,14 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      
+        if segue.identifier == "SignUpSegue" {
+            guard let signupVC = segue.destination as? SignupViewController else {return }
+            signupVC.santaIWishController = santaIWishController
+        }
     }
     
 }

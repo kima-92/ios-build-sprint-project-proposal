@@ -13,9 +13,11 @@ import FirebaseFirestore
 
 class SignupViewController: UIViewController {
     
+    //MARK: - Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    var santaIWishController: SantaIWishController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,8 @@ class SignupViewController: UIViewController {
             let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
+            santaIWishController?.createParentProfile(with: name, email: email)
+            
             // Creating new Account
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 
@@ -54,10 +58,9 @@ class SignupViewController: UIViewController {
                         if let error = error {
                             //family was created but couldn't save the response we get back
                             self.showErrorAlert(errorMessage: "Error creating Account")
-                            NSLog("Accound was created in Firebase, but got bad response: \(error)")
+                            NSLog("Account was created in Firebase, but got bad response: \(error)")
                         }
                     }
-                    // TODO: Transition to next VC
                     self.performSegue(withIdentifier: .segueFromSignup, sender: self)
                 }
             }

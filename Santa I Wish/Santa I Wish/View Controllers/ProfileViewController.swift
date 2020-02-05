@@ -29,6 +29,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         profileCollectionView.delegate = self
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "" {
+            
+        }
+    }
 }
 
 extension ProfileViewController {
