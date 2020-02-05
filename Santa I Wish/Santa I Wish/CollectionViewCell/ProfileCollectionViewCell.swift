@@ -14,15 +14,19 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     var childName: String? {
         didSet {
             updateViews()
+            styleCellBorder()
         }
     }
     
     override func awakeFromNib() {
-        updateViews()
+        styleCellBorder()
     }
     private func updateViews() {
         guard let child = childName else { return }
         childNameLabel.text = child
     }
     
+    private func styleCellBorder() {
+        self.layer.cornerRadius = 20
+    }
 }

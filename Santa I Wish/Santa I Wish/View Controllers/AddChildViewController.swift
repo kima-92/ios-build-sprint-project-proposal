@@ -10,31 +10,23 @@ import UIKit
 
 class AddChildViewController: UIViewController {
 
-    
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var ageTextfield: UITextField!
-    
+    var santaIWishController: SantaIWishController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
-    
     @IBAction func doneButton(_ sender: UIButton) {
+        guard let name = nameTextfield.text, !name.isEmpty, let ageString = ageTextfield.text, !ageString.isEmpty, let age = Int(ageString) else { return }
+        santaIWishController?.addChild(withName: name, age: age)
+        navigationController?.popViewController(animated: true)
     }
     
 }
