@@ -12,11 +12,14 @@ import CoreData
 class SantaIWishController {
     
     
-    func addChild(withName name: String age: int , context: NSManagedContext) {}
+    func addChild(withName name: String, age: Int , context: NSManagedObjectContext) {
+        
+        let child = Child()
+    }
     
-    func createLetter(withLetter: String,context: NSManagedContext) {}
+    func createLetter(withLetter: String,context: NSManagedObjectContext) {}
     
-    func addItemToWishList(itemName name: String, note: String ,context: NSManagedContext ) {}
+    func addItemToWishList(itemName name: String, note: String ,context: NSManagedObjectContext ) {}
     
-    func createParentProfile(withName name:String, email:string, context: NSManagedContext) {}
+    func createParentProfile(withName name:String, email:String, context: NSManagedObjectContext) {}
 }

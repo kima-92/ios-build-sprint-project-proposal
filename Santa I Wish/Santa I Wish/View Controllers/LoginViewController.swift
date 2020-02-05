@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var santaIWishController = SantaIWishController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class LoginViewController: UIViewController {
         login()
     }
     
+    //MARK: - Helper methods
     func login() {
         
         // Validate the fields, or save error mesage to display
@@ -95,13 +97,12 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+      
     }
-    */
+    
 }
