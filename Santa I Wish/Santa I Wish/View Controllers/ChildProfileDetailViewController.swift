@@ -26,8 +26,8 @@ class ChildProfileDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
         styleViews()
+        updateViews()
     }
     
     @IBAction func backButton(_ sender: Any) {

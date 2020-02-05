@@ -68,15 +68,13 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 extension ProfileViewController {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return childrenNames.count
-       // return fetchResultsController.fetchedObjects?.count ?? 0
+        return fetchResultsController.fetchedObjects?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChildCell", for: indexPath) as? ProfileCollectionViewCell else { return UICollectionViewCell()}
-        let childName = childrenNames[indexPath.item]
-        //let child = fetchResultsController.object(at: indexPath)
-       cell.childNameLabel.text = childName
+        let child = fetchResultsController.object(at: indexPath)
+        cell.child = child
         return cell
     }
 }
