@@ -682,7 +682,7 @@
                                             <outlet property="lettersToSanta" destination="fjI-89-NYk" id="RaY-mG-cHT"/>
                                             <outlet property="profileImage" destination="ceF-lu-0Xa" id="1ky-lb-aep"/>
                                             <outlet property="wishLists" destination="zGq-Dg-177" id="L7M-aA-30f"/>
-                                            <segue destination="AFL-h3-YMb" kind="show" id="VYd-p1-H7i"/>
+                                            <segue destination="AFL-h3-YMb" kind="show" identifier="ProfileDetailSegue" id="VYd-p1-H7i"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
