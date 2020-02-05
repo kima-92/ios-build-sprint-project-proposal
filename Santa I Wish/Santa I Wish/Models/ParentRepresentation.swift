@@ -9,10 +9,6 @@
 import Foundation
 
 struct ParentRepresentation: Codable {
-    let id: String
     var name: String
     var children: [ChildRepresentation]?
-    var holidayBudget: Double?
-    var password: String?
-    var passCode: String?
 }

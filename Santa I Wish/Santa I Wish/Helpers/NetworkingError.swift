@@ -13,4 +13,7 @@ enum NetworkingError: Error {
     case serverError(Error)
     case unexpectedStatusCode(Int)
     case badDecode
+    case badEncoding
+    case notPutInFB
+    case noRepresentation
 }
