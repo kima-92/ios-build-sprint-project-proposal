@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		17E4E3C32B7006EE77387A00 /* Pods_Santa_I_Wish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */; };
 		DD5532AC23E8D856003C4451 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5532AB23E8D856003C4451 /* LoginViewController.swift */; };
+		DDEE92A723EA604D005922DD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92A623EA604D005922DD /* ProfileViewController.swift */; };
+		DDEE92AA23EA686A005922DD /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92A923EA686A005922DD /* ProfileCollectionViewCell.swift */; };
+		DDEE92AC23EA88DE005922DD /* SantaLettersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92AB23EA88DE005922DD /* SantaLettersTableViewController.swift */; };
+		DDEE92AE23EA88F5005922DD /* WishlistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92AD23EA88F5005922DD /* WishlistsTableViewController.swift */; };
+		DDEE92B023EA8912005922DD /* SendSantaLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92AF23EA8912005922DD /* SendSantaLetterViewController.swift */; };
+		DDEE92B223EA8923005922DD /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92B123EA8923005922DD /* AddItemViewController.swift */; };
+		DDEE92B423EA8AB7005922DD /* ChildProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92B323EA8AB7005922DD /* ChildProfileDetailViewController.swift */; };
 		FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDB023E8907300A1AE05 /* AppDelegate.swift */; };
 		FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDB223E8907300A1AE05 /* SceneDelegate.swift */; };
 		FA6FBDB823E8907300A1AE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDB623E8907300A1AE05 /* Main.storyboard */; };
@@ -37,6 +44,13 @@
 		2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Santa_I_Wish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.debug.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5532AB23E8D856003C4451 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Santa I Wish/View Controllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		DDEE92A623EA604D005922DD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DDEE92A923EA686A005922DD /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDEE92AB23EA88DE005922DD /* SantaLettersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SantaLettersTableViewController.swift; sourceTree = "<group>"; };
+		DDEE92AD23EA88F5005922DD /* WishlistsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistsTableViewController.swift; sourceTree = "<group>"; };
+		DDEE92AF23EA8912005922DD /* SendSantaLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSantaLetterViewController.swift; sourceTree = "<group>"; };
+		DDEE92B123EA8923005922DD /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		DDEE92B323EA8AB7005922DD /* ChildProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProfileDetailViewController.swift; sourceTree = "<group>"; };
 		F2DAE351DCC026C4DC586D74 /* Pods-Santa I Wish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.release.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.release.xcconfig"; sourceTree = "<group>"; };
 		FA6FBDAD23E8907300A1AE05 /* Santa I Wish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Santa I Wish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6FBDB023E8907300A1AE05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +107,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DDEE92A823EA6849005922DD /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DDEE92A923EA686A005922DD /* ProfileCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		FA6FBDA423E8907300A1AE05 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +136,7 @@
 		FA6FBDAF23E8907300A1AE05 /* Santa I Wish */ = {
 			isa = PBXGroup;
 			children = (
+				DDEE92A823EA6849005922DD /* CollectionViewCell */,
 				FA6FBDC423E892C900A1AE05 /* Storyboards */,
 				FA6FBDC823E892EE00A1AE05 /* View Controllers */,
 				FA6FBDC723E892E500A1AE05 /* Model Controllers */,
@@ -177,7 +200,13 @@
 			children = (
 				DD5532AB23E8D856003C4451 /* LoginViewController.swift */,
 				FA6FBDDF23E8F31E00A1AE05 /* SignupViewController.swift */,
+				DDEE92A623EA604D005922DD /* ProfileViewController.swift */,
+				DDEE92B323EA8AB7005922DD /* ChildProfileDetailViewController.swift */,
 				FA6FBDE123E9042F00A1AE05 /* AddChildViewController.swift */,
+				DDEE92AD23EA88F5005922DD /* WishlistsTableViewController.swift */,
+				DDEE92B123EA8923005922DD /* AddItemViewController.swift */,
+				DDEE92AF23EA8912005922DD /* SendSantaLetterViewController.swift */,
+				DDEE92AB23EA88DE005922DD /* SantaLettersTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -318,13 +347,19 @@
 			files = (
 				FA6FBDF223E9B28E00A1AE05 /* ParentRepresentation.swift in Sources */,
 				FA6FBDD823E8B94900A1AE05 /* Bearer.swift in Sources */,
+				DDEE92A723EA604D005922DD /* ProfileViewController.swift in Sources */,
 				FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */,
 				FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */,
+				DDEE92B223EA8923005922DD /* AddItemViewController.swift in Sources */,
+				DDEE92B423EA8AB7005922DD /* ChildProfileDetailViewController.swift in Sources */,
 				FA6FBDF023E9B1E200A1AE05 /* Parent+Convenience.swift in Sources */,
 				FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */,
+				DDEE92AE23EA88F5005922DD /* WishlistsTableViewController.swift in Sources */,
 				FA6FBDE423E904C100A1AE05 /* Keys.swift in Sources */,
 				FA6FBDE723E9330D00A1AE05 /* CoreDataStack.swift in Sources */,
+				DDEE92AC23EA88DE005922DD /* SantaLettersTableViewController.swift in Sources */,
 				FA6FBDE023E8F31E00A1AE05 /* SignupViewController.swift in Sources */,
+				DDEE92AA23EA686A005922DD /* ProfileCollectionViewCell.swift in Sources */,
 				FA6FBDEE23E9B17900A1AE05 /* Item+Convenience.swift in Sources */,
 				FA6FBDEC23E9B14C00A1AE05 /* Child+Covenience.swift in Sources */,
 				FA6FBDEA23E933C900A1AE05 /* SantaIWish.xcdatamodeld in Sources */,
@@ -334,6 +369,7 @@
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
 				FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */,
 				DD5532AC23E8D856003C4451 /* LoginViewController.swift in Sources */,
+				DDEE92B023EA8912005922DD /* SendSantaLetterViewController.swift in Sources */,
 				FA6FBDE223E9042F00A1AE05 /* AddChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

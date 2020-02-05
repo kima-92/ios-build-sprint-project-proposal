@@ -10,10 +10,14 @@ import UIKit
 
 class AddChildViewController: UIViewController {
 
+    
+    @IBOutlet weak var nameTextfield: UITextField!
+    @IBOutlet weak var ageTextfield: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.isHidden = true
     }
     
     /*
@@ -25,5 +29,12 @@ class AddChildViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func doneButton(_ sender: UIButton) {
+    }
+    
 }

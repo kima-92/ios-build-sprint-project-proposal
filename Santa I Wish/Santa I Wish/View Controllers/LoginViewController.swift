@@ -38,13 +38,12 @@ class LoginViewController: UIViewController {
             guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
                 let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
-            Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+            Auth.auth().signIn(withEmail: email, password: password) { (_, err) in
                 
                 if let err = err {
                     self.showErrorAlert(errorMessage: "Unsuccessful Login: \(err.localizedDescription)")
                     NSLog("Error trying to login: \(err)")
                 } else {
-                    // TODO: Use the result coming back from the response
                     self.performSegue(withIdentifier: .segueFromLogin, sender: self)
                 }
             }
@@ -77,6 +76,7 @@ class LoginViewController: UIViewController {
         //
         //            return "Please make sure your password is at least 8 characters, contains a special character and a number."
         //        }
+        
         return nil
     }
     
@@ -90,6 +90,7 @@ class LoginViewController: UIViewController {
     
     func updateViews() {
         passwordTextField.isSecureTextEntry = true
+        navigationController?.navigationBar.isHidden = true 
         navigationController?.setNavigationBarHidden(true, animated: true)
         self.hideKeyboardWhenTappedAround()
     }
