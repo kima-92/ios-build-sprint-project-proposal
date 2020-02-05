@@ -11,4 +11,10 @@ import CoreData
 
 extension Parent {
     
+    convenience init(name: String, email:String, children: NSSet, context: NSManagedObjectContext) {
+        self.init(context:context)
+        self.name = name
+        self.email = email
+        self.children = children
+    }
 }

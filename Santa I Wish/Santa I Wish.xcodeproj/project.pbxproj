@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		17E4E3C32B7006EE77387A00 /* Pods_Santa_I_Wish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */; };
 		DD5532AC23E8D856003C4451 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5532AB23E8D856003C4451 /* LoginViewController.swift */; };
+		DDC2A50023EB23BB00BC40C5 /* Letter+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2A4FF23EB23BB00BC40C5 /* Letter+Convenience.swift */; };
+		DDC2A50223EB246B00BC40C5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2A50123EB246B00BC40C5 /* CoreDataStack.swift */; };
+		DDC2A50423EB266800BC40C5 /* SantaIWishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2A50323EB266800BC40C5 /* SantaIWishController.swift */; };
 		DDEE92A723EA604D005922DD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92A623EA604D005922DD /* ProfileViewController.swift */; };
 		DDEE92AA23EA686A005922DD /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92A923EA686A005922DD /* ProfileCollectionViewCell.swift */; };
 		DDEE92AC23EA88DE005922DD /* SantaLettersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92AB23EA88DE005922DD /* SantaLettersTableViewController.swift */; };
@@ -44,6 +47,9 @@
 		2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Santa_I_Wish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.debug.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5532AB23E8D856003C4451 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Santa I Wish/View Controllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		DDC2A4FF23EB23BB00BC40C5 /* Letter+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Letter+Convenience.swift"; sourceTree = "<group>"; };
+		DDC2A50123EB246B00BC40C5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		DDC2A50323EB266800BC40C5 /* SantaIWishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SantaIWishController.swift; sourceTree = "<group>"; };
 		DDEE92A623EA604D005922DD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DDEE92A923EA686A005922DD /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		DDEE92AB23EA88DE005922DD /* SantaLettersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SantaLettersTableViewController.swift; sourceTree = "<group>"; };
@@ -165,12 +171,14 @@
 			children = (
 				FA6FBDD723E8B94900A1AE05 /* Bearer.swift */,
 				FA6FBDE823E933C900A1AE05 /* SantaIWish.xcdatamodeld */,
+				DDC2A4FF23EB23BB00BC40C5 /* Letter+Convenience.swift */,
 				FA6FBDEB23E9B14C00A1AE05 /* Child+Covenience.swift */,
 				FA6FBDED23E9B17900A1AE05 /* Item+Convenience.swift */,
 				FA6FBDEF23E9B1E200A1AE05 /* Parent+Convenience.swift */,
 				FA6FBDF123E9B28E00A1AE05 /* ParentRepresentation.swift */,
 				FA6FBDF323E9B37E00A1AE05 /* ChildRepresentation.swift */,
 				FA6FBDF523E9B7B300A1AE05 /* ItemRepresentation.swift */,
+				DDC2A50123EB246B00BC40C5 /* CoreDataStack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */,
+				DDC2A50323EB266800BC40C5 /* SantaIWishController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -350,7 +359,9 @@
 				DDEE92A723EA604D005922DD /* ProfileViewController.swift in Sources */,
 				FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */,
 				FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */,
+				DDC2A50023EB23BB00BC40C5 /* Letter+Convenience.swift in Sources */,
 				DDEE92B223EA8923005922DD /* AddItemViewController.swift in Sources */,
+				DDC2A50223EB246B00BC40C5 /* CoreDataStack.swift in Sources */,
 				DDEE92B423EA8AB7005922DD /* ChildProfileDetailViewController.swift in Sources */,
 				FA6FBDF023E9B1E200A1AE05 /* Parent+Convenience.swift in Sources */,
 				FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */,
@@ -368,6 +379,7 @@
 				FA6FBDF623E9B7B300A1AE05 /* ItemRepresentation.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
 				FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */,
+				DDC2A50423EB266800BC40C5 /* SantaIWishController.swift in Sources */,
 				DD5532AC23E8D856003C4451 /* LoginViewController.swift in Sources */,
 				DDEE92B023EA8912005922DD /* SendSantaLetterViewController.swift in Sources */,
 				FA6FBDE223E9042F00A1AE05 /* AddChildViewController.swift in Sources */,

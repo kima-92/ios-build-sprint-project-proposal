@@ -11,4 +11,10 @@ import CoreData
 
 extension Item {
     
+    convenience init(image: String, childNote: String, child: Child, context: NSManagedObjectContext) {
+        self.init(context:context)
+        self.image = image
+        self.childNote = childNote
+        self.child = child
+    }
 }
