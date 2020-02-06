@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import FirebaseAuth
+import Firebase
 
 struct NetworkController {
     private let baseURL = URL(string: "https://santaiwishbwunit4.firebaseio.com/")!
-    
+
     // MARK: Fetch Parent from Firebase
     func fetchParentFromServer(name: String, completion: @escaping (Result<ParentRepresentation?, NetworkingError>) -> Void) {
         
@@ -54,6 +56,7 @@ struct NetworkController {
     func put(parentRepresentation: ParentRepresentation, id: String, completion: @escaping (Result<ParentRepresentation?, NetworkingError>) -> Void) {
         
         let requestURL = baseURL
+        .appendingPathComponent("ParentAccount")
             .appendingPathComponent(id)
             .appendingPathExtension("json")
         
@@ -79,4 +82,37 @@ struct NetworkController {
             }
         }.resume()
     }
+    
+    func putChild(child: Child, id: String?, completion: @escaping (NetworkingError?) -> Void) {
+        guard let id = id else { return }
+        guard let childRep = child.childRepresentation else { return }
+        let requestURL = baseURL
+        .appendingPathComponent("ParentAccount")
+            .appendingPathComponent(id)
+            .appendingPathComponent("children")
+            .appendingPathComponent(childRep.name)
+            .appendingPathExtension("json")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(child.childRepresentation)
+            print("Sucefully PUT parent in Firebase")
+        } catch {
+            NSLog("Error encoding parent representation: \(error)")
+            completion(.badEncoding)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            
+            if let error = error {
+                NSLog("Error PUTting parent: \(error)")
+                completion(.serverError(error))
+                return
+            }
+        }.resume()
+    }
+
 }

@@ -17,7 +17,8 @@ class SantaIWishController {
     
 private var token = "token"
 private let db = Firestore.firestore()
-
+private let networkAPI = NetworkController()
+    
     func getCredentials() {
         let user = Auth.auth().currentUser
         user?.getIDToken(completion: { (token, error) in
@@ -36,17 +37,13 @@ private let db = Firestore.firestore()
     
 @discardableResult func addChild(withName name: String, age: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) -> Child {
         let child = Child(name: name, age: String(age), context: context)
+        let userID = Auth.auth().currentUser?.uid
         CoreDataStack.shared.saveToPersistentStore()
-     let userID = Auth.auth().currentUser?.uid
-   
-    let childJson: [String: Any] = [
-    "age": child.childRepresentation?.age ?? 0,
-    "name": child.childRepresentation?.name ?? "",
-    "letters": child.childRepresentation?.letters ?? [],
-    "items": child.childRepresentation?.items ?? []
-    
-    ]
-
+    networkAPI.putChild(child: child, id: userID) { (error) in
+        if let error = error {
+            NSLog("error putting childon firebase: \(error)")
+        }
+    }
         return child
     }
     
@@ -61,9 +58,8 @@ func createParentProfile(with name:String, email:String, context: NSManagedObjec
     return parent
     }
     
-//    private func getDocument() -> String {
-//        var documentID: String  = ""
-//        let ref =  db.collection("ParentAccount")
-//      
-//    }
+    func testGettingDocuments() {
+        
+    }
+   
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
 
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
 
@@ -33,8 +34,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        print(childParent?.name ?? "oops this isnt working!")
     }
+    
     let childrenNames = ["kora"]
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -44,14 +44,14 @@ class SignupViewController: UIViewController {
             let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
             // Creating new Account
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+            Auth.auth().createUser(withEmail: email, password: password) { (_, err) in
                 self.santaIWishController.getCredentials()
                 if let err = err {
                     self.showErrorAlert(errorMessage: "Error creating Account: \(err.localizedDescription)")
                     NSLog("Error creating family account to PUT in Firebase: \(err)")
                 } else {
                     let db = Firestore.firestore()
-                    db.collection("ParentAccount").addDocument(data: ["name": name, "id": result!.user.uid]) { (error) in
+                    db.collection("ParentAccount").addDocument(data: ["name": name]) { (error) in
                         let parent = self.santaIWishController.createParentProfile(with: name, email: email)
                     self.childParent = parent
                         if let error = error {

@@ -21,6 +21,9 @@ class AddItemViewController: UIViewController {
 
     }
     
+    @IBAction func pickImageButton(_ sender: UITapGestureRecognizer) {
+    }
+    
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true
         )
