@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     // MARK: - Properties
     var santaIWIshController = SantaIWishController()
-    
+    var childParent: Parent?
     var fetchResultsController: NSFetchedResultsController<Child> {
         let fetchRequest: NSFetchRequest<Child> = Child.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        
+        print(childParent?.name ?? "oops this isnt working!")
     }
     let childrenNames = ["kora"]
     override func viewWillAppear(_ animated: Bool) {

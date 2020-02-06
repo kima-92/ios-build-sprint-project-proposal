@@ -23,9 +23,10 @@ func createLetter(withLetter: String, context: NSManagedObjectContext) {}
     
 func addItemToWishList(itemName name: String, note: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext ) {}
     
-func createParentProfile(with name:String, email:String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+func createParentProfile(with name:String, email:String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext)-> Parent {
         let parent = Parent(name: name, email: email, context: context)
         CoreDataStack.shared.saveToPersistentStore()
         print(parent)
+    return parent
     }
 }

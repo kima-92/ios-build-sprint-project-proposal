@@ -576,7 +576,7 @@
         <!--Profile View Controller-->
         <scene sceneID="YFz-cR-id0">
             <objects>
-                <viewController id="swj-rg-Hk2" customClass="ProfileViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="swj-rg-Hk2" customClass="ProfileViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HFS-Sn-EyO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1001,6 +1001,6 @@
         <image name="profilePic" width="43" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iiq-id-CMk"/>
+        <segue reference="PwE-0H-BsP"/>
     </inferredMetricsTieBreakers>
 </document>
