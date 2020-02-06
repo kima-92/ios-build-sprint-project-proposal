@@ -171,14 +171,14 @@
 			children = (
 				FA6FBDD723E8B94900A1AE05 /* Bearer.swift */,
 				FA6FBDE823E933C900A1AE05 /* SantaIWish.xcdatamodeld */,
-				DDC2A4FF23EB23BB00BC40C5 /* Letter+Convenience.swift */,
-				DD4F322823EBD65800EC2067 /* LetterRepresentation.swift */,
-				FA6FBDEB23E9B14C00A1AE05 /* Child+Covenience.swift */,
-				FA6FBDED23E9B17900A1AE05 /* Item+Convenience.swift */,
+				FA6FBDF123E9B28E00A1AE05 /* ParentRepresentation.swift */,
 				FA6FBDEF23E9B1E200A1AE05 /* Parent+Convenience.swift */,
 				FA6FBDF323E9B37E00A1AE05 /* ChildRepresentation.swift */,
-				FA6FBDF123E9B28E00A1AE05 /* ParentRepresentation.swift */,
+				FA6FBDEB23E9B14C00A1AE05 /* Child+Covenience.swift */,
 				FA6FBDF523E9B7B300A1AE05 /* ItemRepresentation.swift */,
+				FA6FBDED23E9B17900A1AE05 /* Item+Convenience.swift */,
+				DD4F322823EBD65800EC2067 /* LetterRepresentation.swift */,
+				DDC2A4FF23EB23BB00BC40C5 /* Letter+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

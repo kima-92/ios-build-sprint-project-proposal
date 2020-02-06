@@ -38,6 +38,26 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        
+        guard let child = child,
+            let image = toyImage.image,
+            toyName.text != "",
+            let name = toyName.text,
+            let description = toyDescription.text,
+            let imageData = image.pngData() else { return }
+        
+        let item = Item(image: imageData, childNote: description, name: name, context: CoreDataStack.shared.mainContext)
+        
+        santaIWishController?.addItemToWishList(child: child, item: item, completion: { (error) in
+            
+            if let error = error {
+                NSLog("Couldn't save item to WishList: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
     }
     
     private func savePhotoToLibrary() {

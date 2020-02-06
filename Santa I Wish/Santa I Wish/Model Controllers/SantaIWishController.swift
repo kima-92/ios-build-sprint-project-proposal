@@ -19,7 +19,6 @@ class SantaIWishController {
     
     private var token = "token"
     private let db = Firestore.firestore()
-    //private let networkAPI = NetworkController()
     
     func getCredentials() {
         let user = Auth.auth().currentUser
@@ -51,7 +50,41 @@ class SantaIWishController {
     
     func createLetter(withLetter: String, context: NSManagedObjectContext) {}
     
-    func addItemToWishList(itemName name: String, note: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext ) {}
+    // Fetches Child from CD -> Puts Item in Firebase -> Saves Item to CD
+    func addItemToWishList(child: Child, item: Item, context: NSManagedObjectContext = CoreDataStack.shared.mainContext, completion: (Error?) -> Void)  {
+        
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        context.performAndWait {
+            
+            do {
+                guard let name = child.name else { return }
+                let namesToFetch = [name]
+                
+                let fetchRequest: NSFetchRequest<Child> = Child.fetchRequest()
+                fetchRequest.predicate = NSPredicate(format: "name IN %@", namesToFetch)
+                
+                let children = try context.fetch(fetchRequest)
+                let singleChild = children.filter({ $0.name == name })
+                let userID = Auth.auth().currentUser?.uid
+                
+                putItem(child: child, id: userID, item: item) { (error) in
+                    
+                    if let error = error {
+                        NSLog("Error putting Item in WishList: \(error)")
+                        return
+                    } else {
+                        CoreDataStack.shared.save(context: context)
+                    }
+                }
+                completion(nil)
+            } catch {
+                NSLog("Error adding Item to Child")
+                completion(error)
+                return
+            }
+        }
+    }
     
     func createParentProfile(with name:String, email:String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext)-> Parent {
         let parent = Parent(name: name, email: email, context: context)
@@ -136,6 +169,7 @@ class SantaIWishController {
         }.resume()
     }
     
+    // PUT Child in Firebase
     func putChild(child: Child, id: String?, completion: @escaping (NetworkingError?) -> Void) {
         guard let id = id else { return }
         guard let childRep = child.childRepresentation else { return }
@@ -151,9 +185,9 @@ class SantaIWishController {
         
         do {
             request.httpBody = try JSONEncoder().encode(child.childRepresentation)
-            print("Sucefully PUT parent in Firebase")
+            print("Sucefully PUT child in Firebase")
         } catch {
-            NSLog("Error encoding parent representation: \(error)")
+            NSLog("Error encoding child representation: \(error)")
             completion(.badEncoding)
             return
         }
@@ -161,7 +195,44 @@ class SantaIWishController {
         URLSession.shared.dataTask(with: request) { (_, _, error) in
             
             if let error = error {
-                NSLog("Error PUTting parent: \(error)")
+                NSLog("Error PUTting child: \(error)")
+                completion(.serverError(error))
+                return
+            }
+        }.resume()
+    }
+    
+    // PUT Item in Firebase
+    func putItem(child: Child, id: String?, item: Item, completion: @escaping (NetworkingError?) -> Void) {
+        
+        guard let id = id,
+            let childRep = child.childRepresentation,
+            let itemRep = item.itemRepresentation else { return }
+        
+        let requestURL = baseURL
+            .appendingPathComponent("ParentAccount")
+            .appendingPathComponent(id)
+            .appendingPathComponent("children")
+            .appendingPathComponent(childRep.name)
+            .appendingPathComponent("Items")
+            .appendingPathComponent(itemRep.name)
+            .appendingPathExtension("json")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(item.itemRepresentation)
+            print("Sucefully PUT item in Firebase")
+        } catch {
+            NSLog("Error encoding item representation: \(error)")
+            completion(.badEncoding)
+            return
+        }
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            
+            if let error = error {
+                NSLog("Error PUTting item: \(error)")
                 completion(.serverError(error))
                 return
             }

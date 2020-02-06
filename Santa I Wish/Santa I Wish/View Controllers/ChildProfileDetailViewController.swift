@@ -35,6 +35,7 @@ class ChildProfileDetailViewController: UIViewController {
     }
     
   private func updateViews() {
+    
     guard isViewLoaded else { return }
     guard let child = child,
         let age = child.age else { return }
@@ -43,6 +44,8 @@ class ChildProfileDetailViewController: UIViewController {
     ageTextfield.text = "Age: \(age)"
     wishListLabel.text = "wishList items: \(child.items?.count ?? 0)"
     lettersToSantaLabel.text = "letters to santa: \(child.letters?.count ?? 0)"
+    
+    hideKeyboardWhenTappedAround()
     }
     
     private func styleViews() {

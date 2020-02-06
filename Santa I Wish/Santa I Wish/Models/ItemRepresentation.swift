@@ -11,4 +11,5 @@ import Foundation
 struct ItemRepresentation: Codable {
     let childNote: String
     let name: String
+    var image: Data
 }
