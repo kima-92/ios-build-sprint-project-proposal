@@ -19,8 +19,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateViews()
+        checkLoginStatis()
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -28,6 +28,14 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Helper methods
+    
+    func checkLoginStatis() {
+        if UserDefaults.standard.object(forKey: "token") != nil {
+            performSegue(withIdentifier: .segueFromLogin, sender: self)
+        } else {
+            return
+        }
+    }
     func login() {
         
         // Validate the fields, or save error mesage to display
@@ -41,7 +49,8 @@ class LoginViewController: UIViewController {
             guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
                 let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
-            Auth.auth().signIn(withEmail: email, password: password) { (_, err) in
+            Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+                
                 
                 if let err = err {
                     self.showErrorAlert(errorMessage: "Unsuccessful Login: \(err.localizedDescription)")

@@ -8,8 +8,26 @@
 
 import Foundation
 import CoreData
+import FirebaseAuth
+import FirebaseFirestore
 
 class SantaIWishController {
+    
+private var token = "token"
+
+    func getCredentials(_ credential: AuthCredential?) {
+        let userDefaults = UserDefaults.standard
+        if let credential = credential {
+            userDefaults.set(credential, forKey: token)
+        } else {
+        return
+        }
+    }
+    
+    func logOut() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: token)
+    }
     
 @discardableResult func addChild(withName name: String, age: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) -> Child {
         
