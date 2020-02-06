@@ -341,9 +341,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="f3M-C1-mzh" secondAttribute="height" multiplier="187:122" constant="29.122950819672099" id="JDj-lQ-CpV"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mk7-uk-Uev" appends="YES" id="GY6-mO-JEP"/>
-                                </connections>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-6w-mxG">
                                 <rect key="frame" x="20" y="509.5" width="374" height="219"/>
@@ -356,12 +353,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOf-Th-urV">
-                                <rect key="frame" x="20" y="469.5" width="374" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbu-23-NFG">
                                 <rect key="frame" x="141" y="711" width="132" height="77"/>
                                 <constraints>
@@ -380,9 +371,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic5-oU-mUD">
+                                <rect key="frame" x="246" y="105" width="148" height="36"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.92549019610000005" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="   Upload Image   ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadImageButtonTapped:" destination="uGO-7N-8ob" eventType="touchUpInside" id="cUc-6l-kAK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOf-Th-urV">
+                                <rect key="frame" x="20" y="471" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Dce-gz-Iu6" firstAttribute="trailing" secondItem="Ic5-oU-mUD" secondAttribute="trailing" constant="20" id="7ZR-jp-w95"/>
                             <constraint firstItem="Dce-gz-Iu6" firstAttribute="trailing" secondItem="fSG-I1-dxX" secondAttribute="trailing" constant="20" id="MkL-m9-ewZ"/>
                             <constraint firstItem="Pbu-23-NFG" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="141" id="O6h-jT-ZZx"/>
                             <constraint firstItem="fSG-I1-dxX" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="20" id="OEh-C0-18Y"/>
@@ -393,6 +402,7 @@
                             <constraint firstItem="ihf-6w-mxG" firstAttribute="top" secondItem="yOf-Th-urV" secondAttribute="bottom" constant="10" id="ZRw-yO-h3t"/>
                             <constraint firstItem="ihf-6w-mxG" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="20" id="b89-cQ-4fr"/>
                             <constraint firstItem="DAH-ig-okV" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="20" id="dNC-2c-5Yf"/>
+                            <constraint firstItem="Ic5-oU-mUD" firstAttribute="top" secondItem="Dce-gz-Iu6" secondAttribute="top" constant="17" id="lle-IS-Srx"/>
                             <constraint firstItem="Pbu-23-NFG" firstAttribute="centerX" secondItem="ihf-6w-mxG" secondAttribute="centerX" id="nNq-bu-7bg"/>
                             <constraint firstItem="fSG-I1-dxX" firstAttribute="top" secondItem="DAH-ig-okV" secondAttribute="bottom" constant="27.5" id="nyI-kI-Li1"/>
                             <constraint firstItem="f3M-C1-mzh" firstAttribute="top" secondItem="DAH-ig-okV" secondAttribute="bottom" constant="89" id="oaS-Sp-d0q"/>

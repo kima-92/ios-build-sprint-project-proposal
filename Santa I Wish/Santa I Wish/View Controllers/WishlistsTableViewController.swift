@@ -56,8 +56,8 @@ class WishlistsTableViewController: UITableViewController, NSFetchedResultsContr
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItemSegue" {
            guard let addItemVC = segue.destination as? AddItemViewController else { return }
-            addItemVC.santiIWishCOntroller = santaIWishController
-            addItemVC.kid = child
+            addItemVC.santaIWishController = santaIWishController
+            addItemVC.child = child
         }
     }
     

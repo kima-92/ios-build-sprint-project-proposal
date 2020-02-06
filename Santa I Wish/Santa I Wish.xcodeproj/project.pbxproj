@@ -19,6 +19,7 @@
 		DDEE92B023EA8912005922DD /* SendSantaLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92AF23EA8912005922DD /* SendSantaLetterViewController.swift */; };
 		DDEE92B223EA8923005922DD /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92B123EA8923005922DD /* AddItemViewController.swift */; };
 		DDEE92B423EA8AB7005922DD /* ChildProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEE92B323EA8AB7005922DD /* ChildProfileDetailViewController.swift */; };
+		FA396D2123EC8D7100FCCE47 /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA396D2023EC8D7100FCCE47 /* UIImage+Scaling.swift */; };
 		FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDB023E8907300A1AE05 /* AppDelegate.swift */; };
 		FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDB223E8907300A1AE05 /* SceneDelegate.swift */; };
 		FA6FBDB823E8907300A1AE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDB623E8907300A1AE05 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		DDEE92B123EA8923005922DD /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		DDEE92B323EA8AB7005922DD /* ChildProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProfileDetailViewController.swift; sourceTree = "<group>"; };
 		F2DAE351DCC026C4DC586D74 /* Pods-Santa I Wish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.release.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.release.xcconfig"; sourceTree = "<group>"; };
+		FA396D2023EC8D7100FCCE47 /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 		FA6FBDAD23E8907300A1AE05 /* Santa I Wish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Santa I Wish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6FBDB023E8907300A1AE05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA6FBDB223E8907300A1AE05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */,
 				FA6FBDE323E904C100A1AE05 /* Keys.swift */,
 				FA6FBDE623E9330D00A1AE05 /* CoreDataStack.swift */,
+				FA396D2023EC8D7100FCCE47 /* UIImage+Scaling.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				DD4F322923EBD65800EC2067 /* LetterRepresentation.swift in Sources */,
 				FA6FBDEA23E933C900A1AE05 /* SantaIWish.xcdatamodeld in Sources */,
 				FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */,
+				FA396D2123EC8D7100FCCE47 /* UIImage+Scaling.swift in Sources */,
 				FA6FBDF423E9B37E00A1AE05 /* ChildRepresentation.swift in Sources */,
 				FA6FBDF623E9B7B300A1AE05 /* ItemRepresentation.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
