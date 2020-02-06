@@ -203,7 +203,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfg-d2-21z">
-                                    <rect key="frame" x="8" y="6" width="84.5" height="27.5"/>
+                                    <rect key="frame" x="8" y="6" width="115" height="55"/>
                                     <state key="normal" title="Button" image="Back arrow"/>
                                     <connections>
                                         <action selector="backButton:" destination="DbL-P6-7Ox" eventType="touchUpInside" id="if4-Ur-pE1"/>
@@ -273,7 +273,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJd-us-bVG">
-                                    <rect key="frame" x="8" y="8" width="84.5" height="27.5"/>
+                                    <rect key="frame" x="8" y="8" width="115" height="55"/>
                                     <state key="normal" title="Button" image="Back arrow"/>
                                     <connections>
                                         <action selector="backButton:" destination="cKZ-3E-3cd" eventType="touchUpInside" id="mNM-2O-zdX"/>
@@ -589,7 +589,7 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="bER-oZ-7BO">
                     <connections>
-                        <segue destination="cKZ-3E-3cd" kind="show" id="Hxo-Kt-cYf"/>
+                        <segue destination="cKZ-3E-3cd" kind="show" identifier="ShowWishListSegue" id="Hxo-Kt-cYf"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

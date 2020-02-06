@@ -12,9 +12,10 @@ import CoreData
 class WishlistsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - properties
-    var santaIWIshController = SantaIWishController()
+    var santaIWishController: SantaIWishController?
     var childParent: Parent?
-    var kid: Child?
+    var child: Child?
+    
     var fetchResultsController: NSFetchedResultsController<Item> {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -41,7 +42,7 @@ class WishlistsTableViewController: UITableViewController, NSFetchedResultsContr
         // #warning Incomplete implementation, return the number of rows
         return fetchResultsController.fetchedObjects?.count ?? 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToyCell", for: indexPath)
         let item = fetchResultsController.object(at: indexPath)
@@ -55,12 +56,11 @@ class WishlistsTableViewController: UITableViewController, NSFetchedResultsContr
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItemSegue" {
            guard let addItemVC = segue.destination as? AddItemViewController else { return }
-            addItemVC.santiIWishCOntroller = santaIWIshController
-            addItemVC.kid = kid
+            addItemVC.santiIWishCOntroller = santaIWishController
+            addItemVC.kid = child
         }
     }
     
-
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }

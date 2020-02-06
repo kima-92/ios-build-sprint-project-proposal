@@ -38,7 +38,7 @@ class ChildProfileDetailViewController: UIViewController {
     guard isViewLoaded else { return }
     guard let child = child else { return }
     nameTextField.text = child.name
-    ageTextfield.text = child.age
+    ageTextfield.text = "Age: \(child.age)"
     wishListLabel.text = "wishList items: \(child.items?.count ?? 0)"
     lettersToSantaLabel.text = "letters to santa: \(child.letters?.count ?? 0)"
     }
@@ -46,5 +46,18 @@ class ChildProfileDetailViewController: UIViewController {
     private func styleViews() {
         wishListView.layer.cornerRadius = 20
         lettersView.layer.cornerRadius = 20
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowWishListSegue" {
+            
+            if let wishListTableVC = segue.destination as? WishlistsTableViewController {
+                wishListTableVC.santaIWishController = self.santaIWishController
+                wishListTableVC.child = self.child
+            }
+        }
     }
 }
