@@ -10,30 +10,43 @@ import Foundation
 import CoreData
 import FirebaseAuth
 import FirebaseFirestore
+import UIKit
+import Firebase
 
 class SantaIWishController {
     
 private var token = "token"
+private let db = Firestore.firestore()
 
-    func getCredentials(_ credential: AuthCredential?) {
-        let userDefaults = UserDefaults.standard
-        if let credential = credential {
-            userDefaults.set(credential, forKey: token)
-        } else {
-        return
-        }
+    func getCredentials() {
+        let user = Auth.auth().currentUser
+        user?.getIDToken(completion: { (token, error) in
+            if let error = error as NSError? {
+                NSLog("error getting token: \(error)")
+                return
+            }
+            UserDefaults.standard.set(token, forKey: self.token)
+        })
     }
     
-    func logOut() {
+    func signOut() {
         let userDefaults = UserDefaults.standard
         userDefaults.removeObject(forKey: token)
     }
     
 @discardableResult func addChild(withName name: String, age: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) -> Child {
-        
         let child = Child(name: name, age: String(age), context: context)
         CoreDataStack.shared.saveToPersistentStore()
-        print(child)
+     let userID = Auth.auth().currentUser?.uid
+   
+    let childJson: [String: Any] = [
+    "age": child.childRepresentation?.age ?? 0,
+    "name": child.childRepresentation?.name ?? "",
+    "letters": child.childRepresentation?.letters ?? [],
+    "items": child.childRepresentation?.items ?? []
+    
+    ]
+
         return child
     }
     
@@ -47,4 +60,10 @@ func createParentProfile(with name:String, email:String, context: NSManagedObjec
         print(parent)
     return parent
     }
+    
+//    private func getDocument() -> String {
+//        var documentID: String  = ""
+//        let ref =  db.collection("ParentAccount")
+//      
+//    }
 }

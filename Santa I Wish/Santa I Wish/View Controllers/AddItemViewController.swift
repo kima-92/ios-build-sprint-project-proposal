@@ -10,25 +10,23 @@ import UIKit
 
 class AddItemViewController: UIViewController {
 
+    @IBOutlet weak var toyName: UITextField!
+    @IBOutlet weak var toyImage: UIImageView!
+    @IBOutlet weak var toyDescription: UITextView!
+    var santiIWishCOntroller: SantaIWishController?
+    var kid: Child?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true
         )
     }
     
+    @IBAction func saveButton(_ sender: Any) {
+
+    }
 }

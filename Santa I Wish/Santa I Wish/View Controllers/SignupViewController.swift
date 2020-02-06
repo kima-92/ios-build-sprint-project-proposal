@@ -45,7 +45,7 @@ class SignupViewController: UIViewController {
             
             // Creating new Account
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                
+                self.santaIWishController.getCredentials()
                 if let err = err {
                     self.showErrorAlert(errorMessage: "Error creating Account: \(err.localizedDescription)")
                     NSLog("Error creating family account to PUT in Firebase: \(err)")
@@ -61,7 +61,7 @@ class SignupViewController: UIViewController {
                         }
                     }
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    guard let profileVC = storyboard.instantiateViewController(withIdentifier: "SegueFromSignup") as? ProfileViewController else { return }
+                    guard let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as? ProfileViewController else { return }
                     profileVC.childParent = self.childParent
                     self.navigationController?.pushViewController(profileVC, animated: true)
                 }

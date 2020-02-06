@@ -9,9 +9,9 @@
 import Foundation
 
 struct ChildRepresentation: Codable {
-    let id: String
-    var name: String
-    var letter: String?
-    var photo: Data?
-//    var wishList: [Item]?
+    let name: String
+    let age:  String
+    let letters:[LetterRepresentation]
+    let items: [ItemRepresentation]
+
 }

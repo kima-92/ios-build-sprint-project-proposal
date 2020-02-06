@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="wZP-Gd-7ea">
             <objects>
-                <viewController id="zaK-D9-sm4" customClass="LoginViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="zaK-D9-sm4" customClass="LoginViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hyG-Qu-E3l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,6 +155,9 @@
                                     <constraint firstAttribute="width" secondItem="iO9-p2-rcp" secondAttribute="height" multiplier="164:85" id="2De-qM-J0q"/>
                                 </constraints>
                                 <state key="normal" title="Send" backgroundImage="Rectangle -3"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="duv-tM-29t" eventType="touchUpInside" id="Tqw-Tu-A6z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -179,6 +182,9 @@
                         <viewLayoutGuide key="safeArea" id="Zb0-WY-RX5"/>
                     </view>
                     <navigationItem key="navigationItem" id="bkr-MR-tyA"/>
+                    <connections>
+                        <outlet property="letter" destination="kfS-Fb-C56" id="SSj-sI-nPa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ek-Kh-66u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,7 +203,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfg-d2-21z">
-                                    <rect key="frame" x="8" y="6" width="115" height="55"/>
+                                    <rect key="frame" x="8" y="6" width="84.5" height="27.5"/>
                                     <state key="normal" title="Button" image="Back arrow"/>
                                     <connections>
                                         <action selector="backButton:" destination="DbL-P6-7Ox" eventType="touchUpInside" id="if4-Ur-pE1"/>
@@ -214,7 +220,7 @@
                                     </constraints>
                                     <state key="normal" title="Button" image="add button component"/>
                                     <connections>
-                                        <segue destination="duv-tM-29t" kind="show" id="lUp-5o-XiI"/>
+                                        <segue destination="duv-tM-29t" kind="show" identifier="AddLetterSegue" id="lUp-5o-XiI"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -234,7 +240,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="w6q-YL-U04">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LetterCell" id="w6q-YL-U04">
                                 <rect key="frame" x="0.0" y="104" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w6q-YL-U04" id="KNr-jq-tLR">
@@ -267,7 +273,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJd-us-bVG">
-                                    <rect key="frame" x="8" y="8" width="115" height="55"/>
+                                    <rect key="frame" x="8" y="8" width="84.5" height="27.5"/>
                                     <state key="normal" title="Button" image="Back arrow"/>
                                     <connections>
                                         <action selector="backButton:" destination="cKZ-3E-3cd" eventType="touchUpInside" id="mNM-2O-zdX"/>
@@ -280,7 +286,7 @@
                                     </constraints>
                                     <state key="normal" title="Button" image="add button component"/>
                                     <connections>
-                                        <segue destination="uGO-7N-8ob" kind="show" id="SyP-3e-Ckm"/>
+                                        <segue destination="uGO-7N-8ob" kind="show" identifier="AddItemSegue" id="SyP-3e-Ckm"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -294,7 +300,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="o54-ji-Kko">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToyCell" id="o54-ji-Kko">
                                 <rect key="frame" x="0.0" y="102" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o54-ji-Kko" id="YCG-1i-UWN">
@@ -335,12 +341,6 @@
                                     <constraint firstAttribute="width" secondItem="f3M-C1-mzh" secondAttribute="height" multiplier="187:122" constant="29.122950819672099" id="JDj-lQ-CpV"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add/Take Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mso-tz-nIK">
-                                <rect key="frame" x="20" y="195.5" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-6w-mxG">
                                 <rect key="frame" x="20" y="509.5" width="374" height="219"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -367,12 +367,21 @@
                                 <state key="normal" title="Save item" backgroundImage="Rectangle -3">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="uGO-7N-8ob" eventType="touchUpInside" id="WZZ-vY-100"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter toy name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSG-I1-dxX">
+                                <rect key="frame" x="20" y="163" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Dce-gz-Iu6" firstAttribute="trailing" secondItem="mso-tz-nIK" secondAttribute="trailing" constant="20" id="Lpk-uR-a6O"/>
+                            <constraint firstItem="Dce-gz-Iu6" firstAttribute="trailing" secondItem="fSG-I1-dxX" secondAttribute="trailing" constant="20" id="MkL-m9-ewZ"/>
                             <constraint firstItem="Pbu-23-NFG" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="141" id="O6h-jT-ZZx"/>
+                            <constraint firstItem="fSG-I1-dxX" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="20" id="OEh-C0-18Y"/>
                             <constraint firstItem="Dce-gz-Iu6" firstAttribute="trailing" secondItem="yOf-Th-urV" secondAttribute="trailing" constant="20" id="PZB-4d-C0I"/>
                             <constraint firstItem="yOf-Th-urV" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="20" id="QJV-T9-Ww2"/>
                             <constraint firstItem="Dce-gz-Iu6" firstAttribute="trailing" secondItem="ihf-6w-mxG" secondAttribute="trailing" constant="20" id="STe-Y2-u2k"/>
@@ -380,18 +389,22 @@
                             <constraint firstItem="ihf-6w-mxG" firstAttribute="top" secondItem="yOf-Th-urV" secondAttribute="bottom" constant="10" id="ZRw-yO-h3t"/>
                             <constraint firstItem="ihf-6w-mxG" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="20" id="b89-cQ-4fr"/>
                             <constraint firstItem="DAH-ig-okV" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="20" id="dNC-2c-5Yf"/>
-                            <constraint firstItem="mso-tz-nIK" firstAttribute="leading" secondItem="Dce-gz-Iu6" secondAttribute="leading" constant="20" id="mZ9-T2-zWS"/>
                             <constraint firstItem="Pbu-23-NFG" firstAttribute="centerX" secondItem="ihf-6w-mxG" secondAttribute="centerX" id="nNq-bu-7bg"/>
+                            <constraint firstItem="fSG-I1-dxX" firstAttribute="top" secondItem="DAH-ig-okV" secondAttribute="bottom" constant="27.5" id="nyI-kI-Li1"/>
                             <constraint firstItem="f3M-C1-mzh" firstAttribute="top" secondItem="DAH-ig-okV" secondAttribute="bottom" constant="89" id="oaS-Sp-d0q"/>
                             <constraint firstItem="DAH-ig-okV" firstAttribute="top" secondItem="Dce-gz-Iu6" secondAttribute="top" constant="20" id="pPd-eD-KU8"/>
                             <constraint firstItem="yOf-Th-urV" firstAttribute="top" secondItem="f3M-C1-mzh" secondAttribute="bottom" constant="20" id="rdm-wk-g6G"/>
-                            <constraint firstItem="mso-tz-nIK" firstAttribute="top" secondItem="DAH-ig-okV" secondAttribute="bottom" constant="60" id="tBL-5z-0BA"/>
                             <constraint firstItem="Dce-gz-Iu6" firstAttribute="bottom" secondItem="Pbu-23-NFG" secondAttribute="bottom" constant="25" id="wi6-nY-oaP"/>
                             <constraint firstItem="Dce-gz-Iu6" firstAttribute="trailing" secondItem="f3M-C1-mzh" secondAttribute="trailing" constant="20" id="zji-c6-Nah"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dce-gz-Iu6"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yra-Dc-4gS"/>
+                    <connections>
+                        <outlet property="toyDescription" destination="ihf-6w-mxG" id="aby-MG-Eh2"/>
+                        <outlet property="toyImage" destination="f3M-C1-mzh" id="ukx-SH-Ppd"/>
+                        <outlet property="toyName" destination="fSG-I1-dxX" id="Jq3-5Y-XWY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hT-xc-WvK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -495,7 +508,7 @@
                                             <constraint firstItem="tXf-dZ-kD4" firstAttribute="centerY" secondItem="n6t-ve-Xxo" secondAttribute="centerY" id="l5t-e3-sZC"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="ayV-Gd-riB" appends="YES" id="qCp-th-0T9"/>
+                                            <outletCollection property="gestureRecognizers" destination="bER-oZ-7BO" appends="YES" id="mdZ-yV-D9q"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxv-Et-Sgg">
@@ -516,7 +529,7 @@
                                             <constraint firstAttribute="width" constant="179" id="k5g-H5-QRb"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="xx6-D5-Tfc" appends="YES" id="ZTO-tY-srL"/>
+                                            <outletCollection property="gestureRecognizers" destination="08U-yS-0Tb" appends="YES" id="3kh-le-Lpq"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -560,23 +573,23 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yru-Xj-ead" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xx6-D5-Tfc">
+                <tapGestureRecognizer id="08U-yS-0Tb">
                     <connections>
-                        <segue destination="cKZ-3E-3cd" kind="show" id="tQ0-Rh-LL4"/>
+                        <segue destination="DbL-P6-7Ox" kind="show" id="Ruj-HN-bC4"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="ayV-Gd-riB">
+                <tapGestureRecognizer id="bER-oZ-7BO">
                     <connections>
-                        <segue destination="DbL-P6-7Ox" kind="show" id="0Oi-nk-Peu"/>
+                        <segue destination="cKZ-3E-3cd" kind="show" id="Hxo-Kt-cYf"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-126.08695652173914" y="829.6875"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--ProfileSegue-->
         <scene sceneID="YFz-cR-id0">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" id="swj-rg-Hk2" customClass="ProfileViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" title="ProfileSegue" id="swj-rg-Hk2" customClass="ProfileViewController" customModule="Santa_I_Wish" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HFS-Sn-EyO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -697,9 +710,20 @@
                                     <segue destination="3ht-Td-BBY" kind="show" identifier="CreateChildProfile" id="k8s-oO-gfM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFj-T5-frF">
+                                <rect key="frame" x="305" y="111" width="89" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="SignOut">
+                                    <color key="titleColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LHo-gC-7Ti" kind="unwind" unwindAction="logout:" id="8bD-Ru-CNV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="XlT-26-rY9" firstAttribute="trailing" secondItem="LFj-T5-frF" secondAttribute="trailing" constant="20" id="5wV-Gw-D1r"/>
                             <constraint firstItem="apj-H8-z09" firstAttribute="trailing" secondItem="OKe-pF-M22" secondAttribute="trailing" id="7I4-Cb-kw2"/>
                             <constraint firstItem="apj-H8-z09" firstAttribute="top" secondItem="OKe-pF-M22" secondAttribute="bottom" constant="42" id="7SW-sd-xat"/>
                             <constraint firstItem="XlT-26-rY9" firstAttribute="trailing" secondItem="IHT-nb-XW4" secondAttribute="trailing" constant="10" id="9gG-gD-6GT"/>
@@ -707,6 +731,7 @@
                             <constraint firstItem="IHT-nb-XW4" firstAttribute="top" secondItem="XlT-26-rY9" secondAttribute="top" constant="60" id="FK6-nt-Hc2"/>
                             <constraint firstItem="OKe-pF-M22" firstAttribute="top" secondItem="IHT-nb-XW4" secondAttribute="bottom" constant="49" id="JyM-WK-WOl"/>
                             <constraint firstItem="OKe-pF-M22" firstAttribute="trailing" secondItem="XlT-26-rY9" secondAttribute="trailing" id="UJs-8d-HTv"/>
+                            <constraint firstItem="LFj-T5-frF" firstAttribute="top" secondItem="XlT-26-rY9" secondAttribute="top" constant="23" id="edi-gD-7Ng"/>
                             <constraint firstItem="IHT-nb-XW4" firstAttribute="leading" secondItem="XlT-26-rY9" secondAttribute="leading" constant="10" id="fzh-Bf-U33"/>
                             <constraint firstItem="apj-H8-z09" firstAttribute="trailing" secondItem="XlT-26-rY9" secondAttribute="trailing" id="hC6-7o-jUu"/>
                             <constraint firstItem="apj-H8-z09" firstAttribute="bottom" secondItem="XlT-26-rY9" secondAttribute="bottom" id="rXz-xS-VMT"/>
@@ -722,6 +747,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOw-JC-Usg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="LHo-gC-7Ti" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="808.69565217391312" y="829.6875"/>
         </scene>

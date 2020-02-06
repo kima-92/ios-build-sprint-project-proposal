@@ -7,68 +7,61 @@
 //
 
 import UIKit
+import CoreData
 
-class WishlistsTableViewController: UITableViewController {
+class WishlistsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
+    // MARK: - properties
+    var santaIWIshController = SantaIWishController()
+    var childParent: Parent?
+    var kid: Child?
+    var fetchResultsController: NSFetchedResultsController<Item> {
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        let moc = CoreDataStack.shared.mainContext
+        let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultsController.delegate = self
+        
+        do {
+            try fetchResultsController.performFetch()
+        } catch {
+            fatalError("Failed to fetch entities: \(error)")
+        }
+        return fetchResultsController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+ 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return fetchResultsController.fetchedObjects?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToyCell", for: indexPath)
+        let item = fetchResultsController.object(at: indexPath)
+        cell.textLabel?.text = item.name
         return cell
     }
-    */
-
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddItemSegue" {
+           guard let addItemVC = segue.destination as? AddItemViewController else { return }
+            addItemVC.santiIWishCOntroller = santaIWIshController
+            addItemVC.kid = kid
+        }
     }
-    */
+    
 
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
-    
 }

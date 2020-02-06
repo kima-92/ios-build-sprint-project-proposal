@@ -9,12 +9,6 @@
 import Foundation
 
 struct ItemRepresentation: Codable {
-    let id: String
-    var name: String
-    var letter: String?
-    var childNotes: String?
-    var hasBeenBought: Bool?
-    var image: Data?
-    var store: String?
-    var priceS: Double?
+    let childNote: String
+    let name: String
 }

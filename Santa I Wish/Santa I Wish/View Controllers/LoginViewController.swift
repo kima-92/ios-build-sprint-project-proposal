@@ -49,9 +49,8 @@ class LoginViewController: UIViewController {
             guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
                 let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
             
-            Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
-                
-                
+            Auth.auth().signIn(withEmail: email, password: password) { (_, err) in
+                self.santaIWishController.getCredentials()
                 if let err = err {
                     self.showErrorAlert(errorMessage: "Unsuccessful Login: \(err.localizedDescription)")
                     NSLog("Error trying to login: \(err)")
@@ -117,4 +116,11 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func logout(_ unwindSegue: UIStoryboardSegue) {
+        if let senderVC = unwindSegue.source as? ProfileViewController {
+            senderVC.santaIWIshController.signOut()
+            viewWillAppear(true)
+        }
+        
+    }
 }

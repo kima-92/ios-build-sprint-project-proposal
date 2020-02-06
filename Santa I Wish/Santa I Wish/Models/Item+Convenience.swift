@@ -11,10 +11,16 @@ import CoreData
 
 extension Item {
     
-    convenience init(image: String, childNote: String, child: Child, context: NSManagedObjectContext) {
+    var itemRepresentation: ItemRepresentation? {
+        guard let childNote = childNote, let name = name  else { return nil }
+        return ItemRepresentation(childNote: childNote,name: name)
+    }
+    
+    convenience init(image: String, childNote: String, name: String, context: NSManagedObjectContext) {
         self.init(context:context)
         self.image = image
         self.childNote = childNote
         self.child = child
+        self.name = name
     }
 }
