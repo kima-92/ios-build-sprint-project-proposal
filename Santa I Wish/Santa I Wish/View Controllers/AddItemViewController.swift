@@ -16,6 +16,7 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var toyDescription: UITextView!
     var santaIWishController: SantaIWishController?
     var child: Child?
+    @IBOutlet weak var uploadImageButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,7 @@ class AddItemViewController: UIViewController {
     func updateViews() {
         toyDescription.text = ""
         self.hideKeyboardWhenTappedAround()
+        uploadImageButton.layer.cornerRadius = 5
     }
 }
 

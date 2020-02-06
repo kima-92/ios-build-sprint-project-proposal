@@ -36,9 +36,11 @@ class ChildProfileDetailViewController: UIViewController {
     
   private func updateViews() {
     guard isViewLoaded else { return }
-    guard let child = child else { return }
+    guard let child = child,
+        let age = child.age else { return }
+    
     nameTextField.text = child.name
-    ageTextfield.text = "Age: \(child.age)"
+    ageTextfield.text = "Age: \(age)"
     wishListLabel.text = "wishList items: \(child.items?.count ?? 0)"
     lettersToSantaLabel.text = "letters to santa: \(child.letters?.count ?? 0)"
     }

@@ -27,7 +27,6 @@
 		FA6FBDBD23E8907700A1AE05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDBB23E8907700A1AE05 /* LaunchScreen.storyboard */; };
 		FA6FBDCA23E8958300A1AE05 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */; };
 		FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */; };
-		FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */; };
 		FA6FBDD823E8B94900A1AE05 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDD723E8B94900A1AE05 /* Bearer.swift */; };
 		FA6FBDDA23E8BC8E00A1AE05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */; };
 		FA6FBDDE23E8C1E200A1AE05 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */; };
@@ -69,7 +68,6 @@
 		FA6FBDBE23E8907700A1AE05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA6FBDC923E8958300A1AE05 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		FA6FBDCB23E895CA00A1AE05 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		FA6FBDD723E8B94900A1AE05 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		FA6FBDD923E8BC8E00A1AE05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA6FBDDD23E8C1E200A1AE05 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 		FA6FBDC723E892E500A1AE05 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA6FBDD523E8A48A00A1AE05 /* NetworkController.swift */,
 				DDC2A50323EB266800BC40C5 /* SantaIWishController.swift */,
 			);
 			path = "Model Controllers";
@@ -382,7 +379,6 @@
 				FA6FBDF423E9B37E00A1AE05 /* ChildRepresentation.swift in Sources */,
 				FA6FBDF623E9B7B300A1AE05 /* ItemRepresentation.swift in Sources */,
 				FA6FBDB323E8907300A1AE05 /* SceneDelegate.swift in Sources */,
-				FA6FBDD623E8A48A00A1AE05 /* NetworkController.swift in Sources */,
 				DDC2A50423EB266800BC40C5 /* SantaIWishController.swift in Sources */,
 				DD5532AC23E8D856003C4451 /* LoginViewController.swift in Sources */,
 				DDEE92B023EA8912005922DD /* SendSantaLetterViewController.swift in Sources */,

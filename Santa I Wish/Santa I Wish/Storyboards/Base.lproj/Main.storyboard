@@ -366,14 +366,14 @@
                                     <action selector="saveButton:" destination="uGO-7N-8ob" eventType="touchUpInside" id="WZZ-vY-100"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter toy name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSG-I1-dxX">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Toy Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSG-I1-dxX">
                                 <rect key="frame" x="20" y="163" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic5-oU-mUD">
                                 <rect key="frame" x="246" y="105" width="148" height="36"/>
-                                <color key="backgroundColor" red="0.40000000000000002" green="0.92549019610000005" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1744748056" green="0.67586940529999995" blue="0.43863260749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="   Upload Image   ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -418,6 +418,7 @@
                         <outlet property="toyDescription" destination="ihf-6w-mxG" id="aby-MG-Eh2"/>
                         <outlet property="toyImage" destination="f3M-C1-mzh" id="ukx-SH-Ppd"/>
                         <outlet property="toyName" destination="fSG-I1-dxX" id="Jq3-5Y-XWY"/>
+                        <outlet property="uploadImageButton" destination="Ic5-oU-mUD" id="NqE-XP-TGv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hT-xc-WvK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
