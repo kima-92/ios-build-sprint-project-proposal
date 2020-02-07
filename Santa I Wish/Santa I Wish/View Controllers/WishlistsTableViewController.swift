@@ -21,7 +21,7 @@ class WishlistsTableViewController: UITableViewController {
 
             let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
-        let predicate = NSPredicate(format: "%K == %@", "child.name", "Raelyn")
+        let predicate = NSPredicate(format: "%K == %@", "child.name", getChildName())
 
             fetchRequest.predicate = predicate
 
@@ -41,6 +41,13 @@ class WishlistsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    private func getChildName() -> String {
+        guard let child = child,
+            let name = child.name else { return ""}
+        
+        return name
     }
  
     // MARK: - Table view data source
