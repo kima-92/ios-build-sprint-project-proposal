@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SendSantaLetterViewController: UIViewController {
 
@@ -15,7 +16,6 @@ class SendSantaLetterViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var letter: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,22 @@ class SendSantaLetterViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        
+        guard let child = child,
+            let note = letter.text,
+            let title = titleTextField.text else { return }
+        
+        santaIWishController?.addLetterToChild(child: child, note: note, title: title, completion: { (error) in
+            
+            if let error = error {
+                NSLog("Couldn't save letter to Child's Letters: \(error)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
+        
     }
     
     func updateViews() {

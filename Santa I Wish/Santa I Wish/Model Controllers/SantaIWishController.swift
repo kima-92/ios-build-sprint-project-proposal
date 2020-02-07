@@ -55,18 +55,49 @@ class SantaIWishController {
     
     // Fetches Child from CD -> Puts Item in Firebase -> Saves Item to CD
     func addItemToWishList(child: Child, item: Item, context: NSManagedObjectContext = CoreDataStack.shared.mainContext)  {
+        userID = Auth.auth().currentUser?.uid
+        putItem(child: child, id: userID, item: item) { (error) in
+            
+            if let error = error {
+                NSLog("Error putting Item in WishList: \(error)")
+                return
+            } else {
+                CoreDataStack.shared.save(context: context)
+            }
+        }
+        
+    }
+    
+    // Fetches Child from CD -> Puts Letter in Firebase -> Saves Letter to CD
+    func addLetterToChild(child: Child, note: String, title: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext, completion: (Error?) -> Void)  {
+        
+        let letter = Letter(note: note, child: child, title: title, context: CoreDataStack.shared.mainContext)
+        child.addToLetters(letter)
+        CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+        
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        context.performAndWait {
+            
+            do {
                 userID = Auth.auth().currentUser?.uid
-                putItem(child: child, id: userID, item: item) { (error) in
+                putLetter(child: child, id: userID, letter: letter) { (error) in
                     
                     if let error = error {
-                        NSLog("Error putting Item in WishList: \(error)")
+                        NSLog("Error putting Letter in Child's Letters: \(error)")
                         return
                     } else {
                         CoreDataStack.shared.save(context: context)
                     }
                 }
-                
+                completion(nil)
+            } catch {
+                NSLog("Error adding Letter to Child")
+                completion(error)
+                return
             }
+        }
+    }
     
     func createParentProfile(with name:String, email:String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext)-> Parent {
         let parent = Parent(name: name, email: email, context: context)
@@ -78,82 +109,82 @@ class SantaIWishController {
     // MARK: Firebase
     
     // Fetch Parent from Firebase
-//    func fetchParentFromServer(name: String, completion: @escaping (Result<ParentRepresentation?, NetworkingError>) -> Void) {
-//
-//        let requestURL = baseURL.appendingPathExtension("json")
-//
-//        let request = URLRequest(url: requestURL)
-//
-//        URLSession.shared.dataTask(with: request) { (data, _, error) in
-//
-//            if let error = error {
-//                NSLog("Error fetching parents: \(error)")
-//                completion(.failure(.serverError(error)))
-//                return
-//            }
-//
-//            guard let data = data else {
-//                NSLog("No data returned from parents fetch data task")
-//                completion(.failure(.noData))
-//                return
-//            }
-//
-//            let decoder = JSONDecoder()
-//
-//            do {
-//
-//                let parents = try decoder.decode([String: ParentRepresentation].self, from: data).map({ $0.value })
-//                let parentsFilter = parents.filter({ $0.name == name })
-//                let parent = parentsFilter[0]
-//
-//                completion(.success(parent))
-//                return
-//            } catch {
-//                NSLog("Error decoding PersonRepresentation: \(error)")
-//                completion(.failure(.badDecode))
-//                return
-//            }
-//        }.resume()
-//    }
+    //    func fetchParentFromServer(name: String, completion: @escaping (Result<ParentRepresentation?, NetworkingError>) -> Void) {
+    //
+    //        let requestURL = baseURL.appendingPathExtension("json")
+    //
+    //        let request = URLRequest(url: requestURL)
+    //
+    //        URLSession.shared.dataTask(with: request) { (data, _, error) in
+    //
+    //            if let error = error {
+    //                NSLog("Error fetching parents: \(error)")
+    //                completion(.failure(.serverError(error)))
+    //                return
+    //            }
+    //
+    //            guard let data = data else {
+    //                NSLog("No data returned from parents fetch data task")
+    //                completion(.failure(.noData))
+    //                return
+    //            }
+    //
+    //            let decoder = JSONDecoder()
+    //
+    //            do {
+    //
+    //                let parents = try decoder.decode([String: ParentRepresentation].self, from: data).map({ $0.value })
+    //                let parentsFilter = parents.filter({ $0.name == name })
+    //                let parent = parentsFilter[0]
+    //
+    //                completion(.success(parent))
+    //                return
+    //            } catch {
+    //                NSLog("Error decoding PersonRepresentation: \(error)")
+    //                completion(.failure(.badDecode))
+    //                return
+    //            }
+    //        }.resume()
+    //    }
     
     func fetchKidsFromServer(completion: @escaping (NSError?) -> Void) {
         guard  let userID = UserDefaults.standard.object(forKey: "userID")  as? String else { return }
         let requestURL = baseURL.appendingPathComponent("ParentAccount")
-                                .appendingPathComponent(userID)
-                                .appendingPathComponent("children")
-                                .appendingPathExtension("json")
-          print(requestURL)
-          let request = URLRequest(url: requestURL)
-          
-          URLSession.shared.dataTask(with: request) { (data, _, error) in
-              
-              if let error = error as NSError? {
-                  NSLog("Error fetching parents: \(error)")
-                  completion(error)
-                  return
-              }
-              
-              guard let data = data else {
-                  NSLog("No data returned from parents fetch data task")
-                  completion(NSError())
-                  return
-              }
-              
-              let decoder = JSONDecoder()
-              
-              do {
+            .appendingPathComponent(userID)
+            .appendingPathComponent("children")
+            .appendingPathExtension("json")
+        print(requestURL)
+        let request = URLRequest(url: requestURL)
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
+            if let error = error as NSError? {
+                NSLog("Error fetching parents: \(error)")
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from parents fetch data task")
+                completion(NSError())
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
                 //print(String(data: data, encoding: .utf8))
                 let kids = try decoder.decode([String: ChildRepresentation].self, from: data).map({ $0.value })
                 print(kids)
-              } catch let error as NSError {
-                  NSLog("Error decoding PersonRepresentation: \(error)")
-                  completion(error)
-                  return
-              }
+            } catch let error as NSError {
+                NSLog("Error decoding PersonRepresentation: \(error)")
+                completion(error)
+                return
+            }
             
             completion(nil)
-          }.resume()
-      }
+        }.resume()
+    }
     // Fetch Item from Firebase
     func fetchItemsFromServer(child: Child, completion: @escaping (Result<[ItemRepresentation]?, NetworkingError>) -> Void) {
         
@@ -161,7 +192,7 @@ class SantaIWishController {
         
         guard let userID = userID,
             let childRep = child.childRepresentation else { return }
-//            let itemRep = item.itemRepresentation else { return }
+        //            let itemRep = item.itemRepresentation else { return }
         
         let requestURL = baseURL
             .appendingPathComponent("ParentAccount")
@@ -169,7 +200,7 @@ class SantaIWishController {
             .appendingPathComponent("children")
             .appendingPathComponent(childRep.name)
             .appendingPathComponent("Items")
-//            .appendingPathComponent(itemRep.name)
+            //            .appendingPathComponent(itemRep.name)
             .appendingPathExtension("json")
         
         let request = URLRequest(url: requestURL)
@@ -193,8 +224,8 @@ class SantaIWishController {
             do {
                 
                 let items = try decoder.decode([String: ItemRepresentation].self, from: data).map({ $0.value })
-//                let itemsFiltered = items.filter({ $0.name == item.name })
-//                let item = itemsFiltered[0]
+                //                let itemsFiltered = items.filter({ $0.name == item.name })
+                //                let item = itemsFiltered[0]
                 
                 completion(.success(items))
                 return
@@ -307,7 +338,47 @@ class SantaIWishController {
             completion(nil)
         }.resume()
     }
+    
+    // PUT Letter in Firebase
+    func putLetter(child: Child, id: String?, letter: Letter, completion: @escaping (NetworkingError?) -> Void) {
+        
+        guard let id = id,
+            let childRep = child.childRepresentation,
+            let letterRep = letter.letterRepresentation else { return }
+        
+        let requestURL = baseURL
+            .appendingPathComponent("ParentAccount")
+            .appendingPathComponent(id)
+            .appendingPathComponent("children")
+            .appendingPathComponent(childRep.name)
+            .appendingPathComponent("LetterToSanta")
+            .appendingPathComponent(letterRep.title)
+            .appendingPathExtension("json")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(letter.letterRepresentation)
+            print("Sucefully PUT letter in Firebase")
+        } catch {
+            NSLog("Error encoding letter representation: \(error)")
+            completion(.badEncoding)
+            return
+        }
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            
+            if let error = error {
+                NSLog("Error PUTting letter: \(error)")
+                completion(.serverError(error))
+                return
+            }
+            completion(nil)
+        }.resume()
+    }
 }
+
+
 //private func updateTasks(with representations: [TaskRepresentation]) throws {
 //    let tasksWithID = representations.filter { $0.identifier != nil }
 //    let identifiersToFetch = tasksWithID.compactMap { UUID(uuidString: $0.identifier!) }
