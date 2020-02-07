@@ -41,6 +41,10 @@ class SantaLettersTableViewController: UITableViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     private func getChildName() -> String {
         guard let child = child,
             let name = child.name else { return ""}

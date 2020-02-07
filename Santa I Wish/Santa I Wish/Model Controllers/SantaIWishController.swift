@@ -314,6 +314,7 @@ class SantaIWishController {
             .appendingPathComponent("children")
             .appendingPathComponent(childRep.name)
             .appendingPathComponent("Items")
+            .appendingPathComponent(itemRep.name)
             .appendingPathExtension("json")
         print(requestURL)
         var request = URLRequest(url: requestURL)
