@@ -122,37 +122,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your letter to santa, and we'll send it to the northpole!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh0-ss-xTo">
-                                <rect key="frame" x="10" y="168" width="414" height="143.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dear Santa, " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRp-ae-iyg">
-                                <rect key="frame" x="20" y="341.5" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfS-Fb-C56">
-                                <rect key="frame" x="10" y="387.5" width="394" height="332.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tha-gR-apf">
+                                <rect key="frame" x="20" y="147.5" width="374" height="550.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh0-ss-xTo">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <string key="text">Write your letter to Santa
+We'll send it to the Northpole!</string>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Title!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vH5-Ih-Xmh">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="q6G-bF-hzc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dear Santa, " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRp-ae-iyg">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="oB8-1Y-Gcf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kfS-Fb-C56">
+                                        <rect key="frame" x="0.0" y="196" width="374" height="354.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRm-Ek-5ek">
-                                <rect key="frame" x="10" y="109" width="85" height="27.5"/>
+                                <rect key="frame" x="10" y="109" width="85" height="23.5"/>
                                 <state key="normal" title="Button" image="Back arrow"/>
                                 <connections>
                                     <action selector="backButton:" destination="duv-tM-29t" eventType="touchUpInside" id="4Pl-S6-Noy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO9-p2-rcp">
-                                <rect key="frame" x="125" y="716" width="164" height="85"/>
+                                <rect key="frame" x="125" y="718" width="164" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iO9-p2-rcp" secondAttribute="height" multiplier="164:85" id="2De-qM-J0q"/>
+                                    <constraint firstAttribute="height" constant="85" id="P0f-rI-o0y"/>
+                                    <constraint firstAttribute="width" constant="164" id="uSF-Vu-VPL"/>
                                 </constraints>
                                 <state key="normal" title="Send" backgroundImage="Rectangle -3"/>
                                 <connections>
@@ -162,28 +182,23 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="kRp-ae-iyg" firstAttribute="top" secondItem="oh0-ss-xTo" secondAttribute="bottom" constant="30" id="1st-LY-4vY"/>
-                            <constraint firstItem="kfS-Fb-C56" firstAttribute="top" secondItem="kRp-ae-iyg" secondAttribute="bottom" constant="10" id="3PC-qg-fyU"/>
-                            <constraint firstItem="kfS-Fb-C56" firstAttribute="leading" secondItem="Zb0-WY-RX5" secondAttribute="leading" constant="10" id="3b8-ih-Vf5"/>
-                            <constraint firstItem="Zb0-WY-RX5" firstAttribute="trailing" secondItem="kfS-Fb-C56" secondAttribute="trailing" constant="10" id="7yZ-Lo-n4Z"/>
-                            <constraint firstItem="Zb0-WY-RX5" firstAttribute="trailing" secondItem="iO9-p2-rcp" secondAttribute="trailing" constant="125" id="9Cv-db-PoV"/>
-                            <constraint firstItem="Zb0-WY-RX5" firstAttribute="bottom" secondItem="kfS-Fb-C56" secondAttribute="bottom" constant="93" id="Avc-1a-SvY"/>
-                            <constraint firstItem="oh0-ss-xTo" firstAttribute="top" secondItem="Zb0-WY-RX5" secondAttribute="top" constant="80" id="BQe-xq-1ae"/>
+                            <constraint firstItem="iO9-p2-rcp" firstAttribute="top" secondItem="Tha-gR-apf" secondAttribute="bottom" constant="20" id="78r-A0-882"/>
+                            <constraint firstItem="Zb0-WY-RX5" firstAttribute="trailing" secondItem="Tha-gR-apf" secondAttribute="trailing" constant="20" id="8r8-G7-mnO"/>
                             <constraint firstItem="JRm-Ek-5ek" firstAttribute="top" secondItem="Zb0-WY-RX5" secondAttribute="top" constant="21" id="EcD-21-LCI"/>
+                            <constraint firstItem="iO9-p2-rcp" firstAttribute="leading" secondItem="Zb0-WY-RX5" secondAttribute="leading" constant="125" id="Jmt-MU-zfY"/>
                             <constraint firstItem="JRm-Ek-5ek" firstAttribute="leading" secondItem="Zb0-WY-RX5" secondAttribute="leading" constant="10" id="JoQ-X8-li0"/>
+                            <constraint firstItem="Zb0-WY-RX5" firstAttribute="bottom" secondItem="iO9-p2-rcp" secondAttribute="bottom" constant="10" id="MQJ-Qv-3lL"/>
                             <constraint firstItem="Zb0-WY-RX5" firstAttribute="trailing" secondItem="JRm-Ek-5ek" secondAttribute="trailing" constant="319" id="SrU-dS-KNX"/>
-                            <constraint firstItem="kRp-ae-iyg" firstAttribute="leading" secondItem="Zb0-WY-RX5" secondAttribute="leading" constant="20" id="lGF-Ca-Q22"/>
-                            <constraint firstItem="iO9-p2-rcp" firstAttribute="leading" secondItem="Zb0-WY-RX5" secondAttribute="leading" constant="125" id="q6c-m5-Gd4"/>
-                            <constraint firstItem="oh0-ss-xTo" firstAttribute="leading" secondItem="Zb0-WY-RX5" secondAttribute="leading" constant="10" id="spf-sb-LBu"/>
-                            <constraint firstItem="Zb0-WY-RX5" firstAttribute="trailing" secondItem="kRp-ae-iyg" secondAttribute="trailing" constant="20" id="t17-nF-VE3"/>
-                            <constraint firstItem="Zb0-WY-RX5" firstAttribute="bottom" secondItem="iO9-p2-rcp" secondAttribute="bottom" constant="12" id="xgO-Eb-k1Z"/>
-                            <constraint firstItem="oh0-ss-xTo" firstAttribute="trailing" secondItem="Zb0-WY-RX5" secondAttribute="trailing" constant="10" id="xk6-ep-hKv"/>
+                            <constraint firstItem="Tha-gR-apf" firstAttribute="leading" secondItem="361-Bp-kzW" secondAttribute="leading" constant="20" id="cbW-uu-mfl"/>
+                            <constraint firstItem="Zb0-WY-RX5" firstAttribute="trailing" secondItem="iO9-p2-rcp" secondAttribute="trailing" constant="125" id="rGU-ro-mv5"/>
+                            <constraint firstItem="Tha-gR-apf" firstAttribute="top" secondItem="JRm-Ek-5ek" secondAttribute="bottom" constant="15" id="rQX-SA-Gfc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zb0-WY-RX5"/>
                     </view>
                     <navigationItem key="navigationItem" id="bkr-MR-tyA"/>
                     <connections>
                         <outlet property="letter" destination="kfS-Fb-C56" id="SSj-sI-nPa"/>
+                        <outlet property="titleTextField" destination="vH5-Ih-Xmh" id="QQk-28-8uv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ek-Kh-66u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -595,7 +610,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yru-Xj-ead" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="08U-yS-0Tb">
                     <connections>
-                        <segue destination="DbL-P6-7Ox" kind="show" id="Ruj-HN-bC4"/>
+                        <segue destination="DbL-P6-7Ox" kind="show" identifier="ShowLettersSegue" id="Ruj-HN-bC4"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="bER-oZ-7BO">

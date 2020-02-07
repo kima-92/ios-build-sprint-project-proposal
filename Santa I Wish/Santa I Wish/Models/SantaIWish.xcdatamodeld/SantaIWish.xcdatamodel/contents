@@ -14,7 +14,8 @@
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="items" inverseEntity="Child"/>
     </entity>
     <entity name="Letter" representedClassName="Letter" syncable="YES" codeGenerationType="class">
-        <attribute name="letter" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="letters" inverseEntity="Child"/>
     </entity>
     <entity name="Parent" representedClassName="Parent" syncable="YES" codeGenerationType="class">
@@ -25,7 +26,7 @@
     <elements>
         <element name="Child" positionX="-54" positionY="45" width="128" height="118"/>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="Letter" positionX="-45" positionY="72" width="128" height="73"/>
+        <element name="Letter" positionX="-45" positionY="72" width="128" height="88"/>
         <element name="Parent" positionX="-36" positionY="72" width="128" height="28"/>
     </elements>
 </model>

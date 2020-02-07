@@ -8,16 +8,20 @@
 
 import Foundation
 import CoreData
+
 extension Letter {
     
     var letterRepresentation: LetterRepresentation? {
-        guard let letter = letter else { return nil}
-        return LetterRepresentation(letter: letter)
+        guard let note = note,
+            let title = title else { return nil}
+        return LetterRepresentation(note: note, title: title)
     }
     
-    convenience init(letter: String, child: Child, context: NSManagedObjectContext) {
-        self.init(context:context)
-        self.letter = letter
+    convenience init(note: String, child: Child, title: String, context: NSManagedObjectContext) {
+        
+        self.init(context: context)
+        self.note = note
         self.child = child
+        self.title = title
     }
 }

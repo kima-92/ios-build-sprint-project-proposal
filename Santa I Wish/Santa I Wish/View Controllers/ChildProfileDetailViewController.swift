@@ -63,6 +63,12 @@ class ChildProfileDetailViewController: UIViewController {
                 wishListTableVC.santaIWishController = self.santaIWishController
                 wishListTableVC.child = self.child
             }
+        } else if segue.identifier == "ShowLettersSegue" {
+            
+            if let santaLettersTableVC = segue.destination as? SantaLettersTableViewController {
+                santaLettersTableVC.santaIWishController = self.santaIWishController
+                santaLettersTableVC.child = self.child
+            }
         }
     }
 }

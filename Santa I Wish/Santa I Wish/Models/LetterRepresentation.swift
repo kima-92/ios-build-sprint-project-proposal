@@ -9,5 +9,6 @@
 import Foundation
 
 struct LetterRepresentation: Codable {
-    let letter: String
+    let note: String
+    let title: String
 }
