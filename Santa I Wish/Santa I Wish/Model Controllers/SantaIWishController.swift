@@ -19,6 +19,7 @@ class SantaIWishController {
     
     private var token = "token"
     private let db = Firestore.firestore()
+    private var userID: String?
     
     func getCredentials() {
         let user = Auth.auth().currentUser
@@ -28,6 +29,7 @@ class SantaIWishController {
                 return
             }
             UserDefaults.standard.set(token, forKey: self.token)
+            self.userID = Auth.auth().currentUser?.uid
         })
     }
     
@@ -38,7 +40,7 @@ class SantaIWishController {
     
     @discardableResult func addChild(withName name: String, age: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) -> Child {
         let child = Child(name: name, age: String(age), context: context)
-        let userID = Auth.auth().currentUser?.uid
+        userID = Auth.auth().currentUser?.uid
         CoreDataStack.shared.saveToPersistentStore()
         putChild(child: child, id: userID) { (error) in
             if let error = error {
@@ -61,12 +63,12 @@ class SantaIWishController {
                 guard let name = child.name else { return }
                 let namesToFetch = [name]
                 
-                let fetchRequest: NSFetchRequest<Child> = Child.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "name IN %@", namesToFetch)
-                
-                let children = try context.fetch(fetchRequest)
-                let singleChild = children.filter({ $0.name == name })
-                let userID = Auth.auth().currentUser?.uid
+//                let fetchRequest: NSFetchRequest<Child> = Child.fetchRequest()
+//                fetchRequest.predicate = NSPredicate(format: "name IN %@", namesToFetch)
+//                
+//                let children = try context.fetch(fetchRequest)
+//                let singleChild = children.filter({ $0.name == name })
+                userID = Auth.auth().currentUser?.uid
                 
                 putItem(child: child, id: userID, item: item) { (error) in
                     
@@ -132,6 +134,58 @@ class SantaIWishController {
                 return
             } catch {
                 NSLog("Error decoding PersonRepresentation: \(error)")
+                completion(.failure(.badDecode))
+                return
+            }
+        }.resume()
+    }
+    
+    // Fetch Item from Firebase
+    func fetchItemsFromServer(child: Child, completion: @escaping (Result<[ItemRepresentation]?, NetworkingError>) -> Void) {
+        
+        userID = Auth.auth().currentUser?.uid
+        
+        guard let userID = userID,
+            let childRep = child.childRepresentation else { return }
+//            let itemRep = item.itemRepresentation else { return }
+        
+        let requestURL = baseURL
+            .appendingPathComponent("ParentAccount")
+            .appendingPathComponent(userID)
+            .appendingPathComponent("children")
+            .appendingPathComponent(childRep.name)
+            .appendingPathComponent("Items")
+//            .appendingPathComponent(itemRep.name)
+            .appendingPathExtension("json")
+        
+        let request = URLRequest(url: requestURL)
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            
+            if let error = error {
+                NSLog("Error fetching items: \(error)")
+                completion(.failure(.serverError(error)))
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("No data returned from items fetch data task")
+                completion(.failure(.noData))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                
+                let items = try decoder.decode([String: ItemRepresentation].self, from: data).map({ $0.value })
+//                let itemsFiltered = items.filter({ $0.name == item.name })
+//                let item = itemsFiltered[0]
+                
+                completion(.success(items))
+                return
+            } catch {
+                NSLog("Error decoding itemsRepresentations: \(error)")
                 completion(.failure(.badDecode))
                 return
             }
@@ -236,6 +290,7 @@ class SantaIWishController {
                 completion(.serverError(error))
                 return
             }
+            completion(nil)
         }.resume()
     }
 }

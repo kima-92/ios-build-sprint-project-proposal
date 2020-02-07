@@ -39,6 +39,9 @@ class AddItemViewController: UIViewController {
     
     @IBAction func saveButton(_ sender: Any) {
         
+        print("Child in save button: \(child)")
+        
+        
         guard let child = child,
             let image = toyImage.image,
             toyName.text != "",
@@ -47,6 +50,9 @@ class AddItemViewController: UIViewController {
             let imageData = image.pngData() else { return }
         
         let item = Item(image: imageData, childNote: description, name: name, context: CoreDataStack.shared.mainContext)
+        child.addToItems(item)
+        CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+
         
         santaIWishController?.addItemToWishList(child: child, item: item, completion: { (error) in
             

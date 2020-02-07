@@ -10,8 +10,8 @@ import Foundation
 
 struct ChildRepresentation: Codable {
     let name: String
-    let age:  String
-    let letters:[LetterRepresentation]
+    let age: String
+    let letters: [LetterRepresentation]
     let items: [ItemRepresentation]
 
 }

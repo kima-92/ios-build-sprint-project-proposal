@@ -34,6 +34,33 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        
+        do {
+            
+            let fetchRequest: NSFetchRequest<Child> = Child.fetchRequest()
+            let children = try CoreDataStack.shared.mainContext.fetch(fetchRequest)
+            //        let predicate = NSPredicate(format: "%K == %@", "name", "\(String(describing: child?.name))")
+            //        fetchRequest.predicate = predicate
+            
+//            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+
+            print("Children: \(children)")
+            let child = children.first
+            print(child?.name)
+            print("Child items count: \(child?.items?.count)")
+            let fetchRequest2: NSFetchRequest<Item> = Item.fetchRequest()
+            let items = try CoreDataStack.shared.mainContext.fetch(fetchRequest2)
+            print("items count: \(items.count)")
+            
+            let item = items.first
+            print("Item name: \(item?.name)")
+            
+            print("Item's child: \(item?.child)")
+        } catch {
+            print("Fetching chldren failed: \(error)")
+        }
+        
+
     }
     
     let childrenNames = ["kora"]
