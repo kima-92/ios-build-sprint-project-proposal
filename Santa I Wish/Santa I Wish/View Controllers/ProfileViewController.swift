@@ -33,7 +33,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     // MARK: - View lifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureViews()
     }
     
@@ -49,6 +48,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         navigationController?.navigationBar.isHidden = true
         profileCollectionView.dataSource = self
         profileCollectionView.delegate = self
+        santaIWIshController.fetchKidsFromServer { (error) in
+            if let error = error {
+                NSLog("failed to fetch kids: \(error)")
+                return 
+            }
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

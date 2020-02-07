@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import CoreData
 
 class AddItemViewController: UIViewController {
 
@@ -50,16 +51,9 @@ class AddItemViewController: UIViewController {
         child.addToItems(item)
         CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
 
-        santaIWishController?.addItemToWishList(child: child, item: item, completion: { (error) in
+        santaIWishController?.addItemToWishList(child: child, item: item)
+        self.navigationController?.popViewController(animated: true)
             
-            if let error = error {
-                NSLog("Couldn't save item to WishList: \(error)")
-                return
-            }
-            DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
-            }
-        })
     }
     
     private func savePhotoToLibrary() {
