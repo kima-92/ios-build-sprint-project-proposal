@@ -40,12 +40,15 @@ class SantaIWishController {
     }
     
     @discardableResult func addChild(withName name: String, age: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) -> Child {
+        
         let child = Child(name: name, age: String(age), context: context)
         userID = Auth.auth().currentUser?.uid
+//        parent.addToChildren(child)
+        
         CoreDataStack.shared.saveToPersistentStore()
         putChild(child: child, id: userID) { (error) in
             if let error = error {
-                NSLog("error putting childon firebase: \(error)")
+                NSLog("error putting child to firebase: \(error)")
             }
         }
         return child

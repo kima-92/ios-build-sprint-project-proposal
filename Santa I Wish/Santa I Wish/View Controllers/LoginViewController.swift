@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var santaIWishController = SantaIWishController()
+    var childParent = Parent()
     
     override func viewDidLoad() {
         super.viewDidLoad()

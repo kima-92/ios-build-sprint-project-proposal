@@ -15,11 +15,18 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     // MARK: - Properties
     var santaIWIshController = SantaIWishController()
     var childParent: Parent?
+    
     var fetchResultsController: NSFetchedResultsController<Child> {
+        
         let fetchRequest: NSFetchRequest<Child> = Child.fetchRequest()
+        
+//        let predicate = NSPredicate(format: "%K == %@", "parent.name", getParentName())
+//        fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         let moc = CoreDataStack.shared.mainContext
+        
         let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        
         fetchResultsController.delegate = self
         
         do {
@@ -36,7 +43,13 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         configureViews()
     }
     
-    let childrenNames = ["kora"]
+    private func getParentName() -> String {
+        guard let childParent = childParent,
+            let name = childParent.name else { return ""}
+        
+        return name
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         profileCollectionView.reloadData()
@@ -59,7 +72,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CreateChildProfile" {
             guard let childProfileVC = segue.destination as? AddChildViewController else { return }
+            
             childProfileVC.santaIWishController = santaIWIshController
+            childProfileVC.childParent = childParent
+            
         } else if segue.identifier == "ProfileDetailSegue" {
             guard let childProfileVC = segue.destination as? ChildProfileDetailViewController else { return }
             
@@ -84,5 +100,4 @@ extension ProfileViewController {
         cell.child = child
         return cell
     }
-    
 }

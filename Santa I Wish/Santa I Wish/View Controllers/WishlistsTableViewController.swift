@@ -18,24 +18,24 @@ class WishlistsTableViewController: UITableViewController {
   //  var items: [ItemRepresentation]?
     
     var fetchResultsController: NSFetchedResultsController<Item> {
-
-            let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-
+        
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        
         let predicate = NSPredicate(format: "%K == %@", "child.name", getChildName())
-
-            fetchRequest.predicate = predicate
-
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-
-            let moc = CoreDataStack.shared.mainContext
-            let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-            fetchResultsController.delegate = self
-
-            do {
-                try fetchResultsController.performFetch()
-            } catch {
-                fatalError("Failed to fetch entities: \(error)")
-            }
+        
+        fetchRequest.predicate = predicate
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        
+        let moc = CoreDataStack.shared.mainContext
+        let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultsController.delegate = self
+        
+        do {
+            try fetchResultsController.performFetch()
+        } catch {
+            fatalError("Failed to fetch entities: \(error)")
+        }
         return fetchResultsController
     }
     

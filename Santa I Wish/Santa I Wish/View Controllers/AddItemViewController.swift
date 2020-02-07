@@ -53,7 +53,6 @@ class AddItemViewController: UIViewController {
 
         santaIWishController?.addItemToWishList(child: child, item: item)
         self.navigationController?.popViewController(animated: true)
-            
     }
     
     private func savePhotoToLibrary() {
