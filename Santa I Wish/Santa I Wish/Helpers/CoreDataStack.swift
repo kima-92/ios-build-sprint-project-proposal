@@ -9,12 +9,12 @@
 import Foundation
 import CoreData
 
-class CoreDataStack {
+class CoreDataStack: NSObject {
     
-    static let shared = CoreDataStack()
+   @objc static let shared = CoreDataStack()
     
     // Set up a persistent container
-    lazy var container: NSPersistentContainer = {
+   @objc lazy var container: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: "SantaIWish")
         container.loadPersistentStores { (_, error) in
@@ -29,11 +29,11 @@ class CoreDataStack {
     }()
     
     // Create easy access to the moc (managed object context)
-    var mainContext: NSManagedObjectContext {
+  @objc  var mainContext: NSManagedObjectContext {
         return container.viewContext
     }
     
-    func save(context: NSManagedObjectContext) {
+  @objc  func save(context: NSManagedObjectContext) {
         context.performAndWait {
             do {
                 try context.save()
@@ -44,7 +44,7 @@ class CoreDataStack {
         }
     }
     
-    func saveToPersistentStore() {
+  @objc  func saveToPersistentStore() {
         do {
             try mainContext.save()
         } catch {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17E4E3C32B7006EE77387A00 /* Pods_Santa_I_Wish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */; };
+		DD1CCAFC23EE377600BCCB44 /* AddChildOBJCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1CCAFB23EE377600BCCB44 /* AddChildOBJCViewController.m */; };
 		DD4F322923EBD65800EC2067 /* LetterRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F322823EBD65800EC2067 /* LetterRepresentation.swift */; };
 		DD5532AC23E8D856003C4451 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5532AB23E8D856003C4451 /* LoginViewController.swift */; };
 		DDC2A50023EB23BB00BC40C5 /* Letter+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2A4FF23EB23BB00BC40C5 /* Letter+Convenience.swift */; };
@@ -46,6 +47,9 @@
 /* Begin PBXFileReference section */
 		2A9E93457F747C7C5CD1101A /* Pods_Santa_I_Wish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Santa_I_Wish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Santa I Wish.debug.xcconfig"; path = "Target Support Files/Pods-Santa I Wish/Pods-Santa I Wish.debug.xcconfig"; sourceTree = "<group>"; };
+		DD1CCAF623EE33ED00BCCB44 /* Santa I Wish-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Santa I Wish-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD1CCAFA23EE377600BCCB44 /* AddChildOBJCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddChildOBJCViewController.h; sourceTree = "<group>"; };
+		DD1CCAFB23EE377600BCCB44 /* AddChildOBJCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddChildOBJCViewController.m; sourceTree = "<group>"; };
 		DD4F322823EBD65800EC2067 /* LetterRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterRepresentation.swift; sourceTree = "<group>"; };
 		DD5532AB23E8D856003C4451 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Santa I Wish/View Controllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		DDC2A4FF23EB23BB00BC40C5 /* Letter+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Letter+Convenience.swift"; sourceTree = "<group>"; };
@@ -212,10 +216,13 @@
 				DDEE92A623EA604D005922DD /* ProfileViewController.swift */,
 				DDEE92B323EA8AB7005922DD /* ChildProfileDetailViewController.swift */,
 				FA6FBDE123E9042F00A1AE05 /* AddChildViewController.swift */,
+				DD1CCAFA23EE377600BCCB44 /* AddChildOBJCViewController.h */,
+				DD1CCAFB23EE377600BCCB44 /* AddChildOBJCViewController.m */,
 				DDEE92AD23EA88F5005922DD /* WishlistsTableViewController.swift */,
 				DDEE92B123EA8923005922DD /* AddItemViewController.swift */,
 				DDEE92AF23EA8912005922DD /* SendSantaLetterViewController.swift */,
 				DDEE92AB23EA88DE005922DD /* SantaLettersTableViewController.swift */,
+				DD1CCAF623EE33ED00BCCB44 /* Santa I Wish-Bridging-Header.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -255,6 +262,7 @@
 				TargetAttributes = {
 					FA6FBDAC23E8907300A1AE05 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -359,6 +367,7 @@
 				DDEE92A723EA604D005922DD /* ProfileViewController.swift in Sources */,
 				FA6FBDCC23E895CA00A1AE05 /* HTTPMethod.swift in Sources */,
 				FA6FBDB123E8907300A1AE05 /* AppDelegate.swift in Sources */,
+				DD1CCAFC23EE377600BCCB44 /* AddChildOBJCViewController.m in Sources */,
 				DDC2A50023EB23BB00BC40C5 /* Letter+Convenience.swift in Sources */,
 				DDEE92B223EA8923005922DD /* AddItemViewController.swift in Sources */,
 				DDEE92B423EA8AB7005922DD /* ChildProfileDetailViewController.swift in Sources */,
@@ -527,6 +536,7 @@
 			baseConfigurationReference = 50697B16549F74D678F59FB3 /* Pods-Santa I Wish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "Santa I Wish/Info.plist";
@@ -536,6 +546,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Santa-I-Wish";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Santa I Wish/View Controllers/Santa I Wish-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -546,6 +558,7 @@
 			baseConfigurationReference = F2DAE351DCC026C4DC586D74 /* Pods-Santa I Wish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "Santa I Wish/Info.plist";
@@ -555,6 +568,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaschool.Santa-I-Wish";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Santa I Wish/View Controllers/Santa I Wish-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

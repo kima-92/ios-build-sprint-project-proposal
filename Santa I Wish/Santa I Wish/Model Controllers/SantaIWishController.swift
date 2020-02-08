@@ -13,7 +13,7 @@ import FirebaseFirestore
 import UIKit
 import Firebase
 
-class SantaIWishController {
+ @objc class SantaIWishController: NSObject {
     
     private let baseURL = URL(string: "https://santaiwishbwunit4.firebaseio.com/")!
     
@@ -39,7 +39,7 @@ class SantaIWishController {
         userDefaults.removeObject(forKey: token)
     }
     
-    @discardableResult func addChild(withName name: String, age: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) -> Child {
+    @objc @discardableResult func addChild(withName name: String, age: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) -> Child {
         
         let child = Child(name: name, age: String(age), context: context)
         userID = Auth.auth().currentUser?.uid
