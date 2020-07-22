@@ -30,3 +30,13 @@ Raelyn can take pictures or screenshots of they gifts she wants for Christmas, c
 
 ### 5. Github Project/Trello Board:
 https://trello.com/b/rAne2sdK/bw-unit4-santa-i-wish
+
+## Keynotes
+
+<!-- Other option ![](images/2Mission.png) -->
+
+<img src="images/1Intro.png" width=550>
+<img src="images/2Mission.png" width=550>
+<img src="images/3KeyFeatures.png" width=550>
+<img src="images/4NumOneFeature.png" width=550>
+<img src="images/5Future.png" width=550>
